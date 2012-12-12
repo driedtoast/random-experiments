@@ -5,5 +5,5 @@ Place to randomly mess around with libs
 
 
 Using the following:
-* Yeoman for coffescript compiling and package management
-* Traer for physics
+* [Yeoman](http://yeoman.io/) for coffescript compiling and package management
+* [Traer](http://code.google.com/p/traer-js/) for physics eventually
