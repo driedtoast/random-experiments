@@ -1,11 +1,32 @@
 module.exports = function( grunt ) {
   'use strict';
+
+  grunt.loadNpmTasks('grunt-contrib-handlebars');
+
   //
   // Grunt configuration:
   //
   // https://github.com/cowboy/grunt/blob/master/docs/getting_started.md
   //
   grunt.initConfig({
+
+     handlebars: {
+       compile: {
+	 files: {
+	     "temp/modules/compiled-templates.js": [
+             "app/modules/*/templates/**/*.hbs"
+             ]
+         },
+         options: {
+	     namespace: 'Experiments.Templates',
+	     processName: function(filename) {
+		 return filename
+	                 .replace(/^app\/modules\//, '')
+	                 .replace(/\.hbs$/, '');
+             }
+         }	  
+       }
+     },
 
     // Project configuration
     // ---------------------
@@ -67,6 +88,12 @@ module.exports = function( grunt ) {
           'app/images/**/*'
         ],
         tasks: 'reload'
+      },
+      handlebars: {
+        files: [
+	  'app/modules/*/templates/*.hbs'
+        ],
+	tasks: 'handlebars reload'
       }
     },
 
@@ -114,7 +141,7 @@ module.exports = function( grunt ) {
     },
 
     // Below, all paths are relative to the staging directory, which is a copy
-    // of the app/ directory. Any .gitignore, .ignore and .buildignore file
+    // of the app/ directory. Any .gitignore, .ignore and .euildignore file
     // that might appear in the app/ tree are used to ignore these values
     // during the copy process.
 
@@ -166,9 +193,13 @@ module.exports = function( grunt ) {
       baseUrl: './scripts',
       wrap: true
     },
+    server: {
+      app: 'clean lint compass coffee handlebars open-browser watch'
+    }
   });
 
   // Alias the `test` task to run the `mocha` task instead
   grunt.registerTask('test', 'mocha');
+  grunt.registerTask('build', 'intro clean compass coffee handlebars mkdirs usemin-handler rjs concat css min img rev usemin manifest copy time');
 
 };
