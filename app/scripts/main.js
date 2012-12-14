@@ -1,5 +1,5 @@
 
-window.randomExperiments = {
+window.Lab = {
   Models: {},
   Collections: {},
   Views: {},
@@ -10,5 +10,5 @@ window.randomExperiments = {
 };
 
 $(document).ready(function(){
-  randomExperiments.init();
+  Lab.init();
 });
