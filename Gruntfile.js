@@ -1,32 +1,11 @@
 module.exports = function( grunt ) {
   'use strict';
-
-  grunt.loadNpmTasks('grunt-contrib-handlebars');
-
   //
   // Grunt configuration:
   //
   // https://github.com/cowboy/grunt/blob/master/docs/getting_started.md
   //
   grunt.initConfig({
-
-     handlebars: {
-       compile: {
-	 files: {
-	     "app/scripts/modules/compiled-templates.js": [
-             "app/modules/*/templates/**/*.hbs"
-             ]
-         },
-         options: {
-	     namespace: 'Lab.Templates',
-	     processName: function(filename) {
-		 return filename
-	                 .replace(/^app\/modules\//, '')
-	                 .replace(/\.hbs$/, '');
-             }
-         }	  
-       }
-     },
 
     // Project configuration
     // ---------------------
@@ -85,17 +64,9 @@ module.exports = function( grunt ) {
           'app/*.html',
           'app/styles/**/*.css',
           'app/scripts/**/*.js',
-          'app/modules/**/*.js',
-          'app/modules/**/*.hbs',
           'app/images/**/*'
         ],
         tasks: 'reload'
-      },
-      handlebars: {
-        files: [
-	        'app/modules/*/templates/*.hbs'
-        ],
-	tasks: 'handlebars reload'
       }
     },
 
@@ -143,13 +114,13 @@ module.exports = function( grunt ) {
     },
 
     // Below, all paths are relative to the staging directory, which is a copy
-    // of the app/ directory. Any .gitignore, .ignore and .euildignore file
+    // of the app/ directory. Any .gitignore, .ignore and .buildignore file
     // that might appear in the app/ tree are used to ignore these values
     // during the copy process.
 
     // concat css/**/*.css files, inline @import, output a single minified css
     css: {
-      'styles/main.css': ['styles/**/*.css']
+      'styles/index.css': ['styles/**/*.css']
     },
 
     // renames JS/CSS to prepend a hash of their contents for easier
@@ -193,15 +164,12 @@ module.exports = function( grunt ) {
       // no minification, is done by the min task
       optimize: 'none',
       baseUrl: './scripts',
-      wrap: true
+      wrap: true,
+      name: 'config'
     },
-    server: {
-      app: 'clean lint compass coffee handlebars open-browser watch'
-    }
   });
 
   // Alias the `test` task to run the `mocha` task instead
   grunt.registerTask('test', 'mocha');
-  grunt.registerTask('build', 'intro clean compass coffee handlebars mkdirs usemin-handler rjs concat css min img rev usemin manifest copy time');
 
 };

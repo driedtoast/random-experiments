@@ -1,12 +1,8 @@
-class Lab.Views.ApplicationView extends Backbone.View
+define ["backbone"], (Backbone) ->
+  class Views.ApplicationView extends Backbone.View
 
-  template: 'application'
+    template: 'experiment_list'
 
-  initialize: ->
-    console.log "Do somethign here "
-    super
-
-  render: ->
-    console.log "rendering"
-    $(@el).html(Lab.Templates['experiment_list']())
-    @
+    initialize: ->
+      console.log "Do somethign here "
+      super

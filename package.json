@@ -3,7 +3,5 @@
   "name": "",
   "version": "0.0.0",
   "dependencies": {},
-  "devDependencies": {
-    "grunt-contrib-handlebars": "~0.3.3"
-  }
+  "devDependencies": {}
 }

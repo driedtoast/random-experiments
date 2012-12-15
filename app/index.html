@@ -9,12 +9,13 @@
         <title></title>
         <meta name="description" content=""/>
         <meta name="viewport" content="width=device-width"/>
-        <link rel="stylesheet" href="styles/main.css"/>
-	<link rel="stylesheet" href="http://twitter.github.com/bootstrap/1.4.0/bootstrap.min.css">
 
+        <link rel="stylesheet" href="styles/index.css"/>
     </head>
     <body>
-    <div class="container">
+
+    <!-- Main container. -->
+    <div role="main" id="main" class="container">
         <div class="hero-unit">
             <h1>Cheerio!</h1>
             <p>You now have</p>
@@ -22,14 +23,13 @@
                 <li>HTML5 Boilerplate</li>
                 <li>jQuery</li>
                 <li>Backbone.js</li>
-                <li>Lodash</li>
+                <li>Backbone LayoutManager</li>
+                <li>Require.js</li>
                 <li>Mocha</li>
-                <li><a href="experiments" data-relative="true" >Experiments</a></li>
+                <li><a href="/experiments" data-relative="true" >Experiments</a></li>
             </ul>
             <p>installed.</p>
-
-
-
+            <h3>Enjoy coding! - Yeoman</h3>
         </div>
     </div>
         <!--[if lt IE 7]>
@@ -38,24 +38,9 @@
 
         <!-- Add your site or application content here -->
 
-        <!-- build:js scripts/scripts.js -->
-        <script src="scripts/vendor/jquery.min.js"></script>
-        <script src="scripts/vendor/traer.js"></script>
-        <script src="scripts/vendor/lodash.min.js"></script>
-        <script src="scripts/vendor/backbone-min.js"></script>
-        <script src="scripts/main.js"></script>
-        <script src="scripts/modules/compiled-templates.js"></script>
-        <script src="scripts/application-view.js"></script>
-        <script src="scripts/experiment.js"></script>
-        <script src="scripts/app-router.js"></script>
+        <!-- build:js scripts/amd-app.js -->
+        <script data-main="scripts/config" src="scripts/libs/require.js"></script>
         <!-- endbuild -->
 
-        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-        <script>
-            var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
-            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-            g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-            s.parentNode.insertBefore(g,s)}(document,'script'));
-        </script>
     </body>
 </html>
