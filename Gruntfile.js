@@ -13,12 +13,12 @@ module.exports = function( grunt ) {
      handlebars: {
        compile: {
 	 files: {
-	     "temp/modules/compiled-templates.js": [
+	     "app/scripts/modules/compiled-templates.js": [
              "app/modules/*/templates/**/*.hbs"
              ]
          },
          options: {
-	     namespace: 'Experiments.Templates',
+	     namespace: 'Lab.Templates',
 	     processName: function(filename) {
 		 return filename
 	                 .replace(/^app\/modules\//, '')
@@ -85,13 +85,15 @@ module.exports = function( grunt ) {
           'app/*.html',
           'app/styles/**/*.css',
           'app/scripts/**/*.js',
+          'app/modules/**/*.js',
+          'app/modules/**/*.hbs',
           'app/images/**/*'
         ],
         tasks: 'reload'
       },
       handlebars: {
         files: [
-	  'app/modules/*/templates/*.hbs'
+	        'app/modules/*/templates/*.hbs'
         ],
 	tasks: 'handlebars reload'
       }

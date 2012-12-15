@@ -17,8 +17,4 @@ class Lab.Models.Experiments extends Backbone.Collection
     '/experiments.json'
 
   url: (method) ->
-    p = $.param(@params(method))
-    if p
-      @path(method) + '?' + p
-    else
-      @path(method)
+    @path(method)

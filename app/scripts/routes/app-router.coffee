@@ -4,8 +4,11 @@ class Lab.Router extends Backbone.Router
     'experiments'                                     : '_index'
     'experiments/:experimentId'                       : '_experimentDetail'
 
-  initialize: (opts) ->
+
+  initialize: (opts = {} ) ->
+    opts.routes = @routes
     console.log ' initializing router '
+    super
 
 
   _index: ->
@@ -14,9 +17,8 @@ class Lab.Router extends Backbone.Router
     applicationView = new Lab.Views.ApplicationView
       collection: @experimentList
     if fetch
-      @experimentList.fetch
-        success: =>
-          applicationView.render()
+      @experimentList.fetch()
+      applicationView.render()
     else
       applicationView.render()
 
@@ -25,10 +27,9 @@ class Lab.Router extends Backbone.Router
     # add requires, etc...
     console.log "this is the detail for #{experimentId}"
 
-Lab.router = new Lab.Router()
-
 $('a[data-relative]').live 'click', (event) ->
   event.preventDefault()
+  event.stopPropagation()
   target = $(event.currentTarget)
   if !target.data('disabled')
     url = Backbone.history.getFragment(target.attr('href'))
