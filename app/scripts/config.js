@@ -19,6 +19,7 @@ require.config({
     view_application: "../scripts/application-view",
     handlebars: "../scripts/libs/handlebars"
 
+
   },
 
   shim: {
@@ -26,6 +27,10 @@ require.config({
     backbone: {
       deps: ["lodash", "jquery"],
       exports: "Backbone"
+    },
+
+    handlebars: {
+       exports: "Handlebars"
     },
 
     // Backbone.LayoutManager depends on Backbone.

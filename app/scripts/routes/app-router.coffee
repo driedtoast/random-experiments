@@ -1,10 +1,10 @@
-define ["backbone","models_experiments", "view_application"], (Backbone, Models, Views) ->
+define ["backbone","models_experiments", "view_application"], (Backbone, Experiments, ApplicationView) ->
 
   class Lab.Router extends Backbone.Router
     routes:
-      "": "_index"
       'experiments'                                     : '_index'
       'experiments/:experimentId'                       : '_experimentDetail'
+      "": "_index"
 
 
     initialize: (opts = {} ) ->
@@ -14,15 +14,17 @@ define ["backbone","models_experiments", "view_application"], (Backbone, Models,
 
 
     _index: ->
+      console.log 'starting to render experiment list'
       fetch = !@experimentList
-      @experimentList ||= new Models()
-      applicationView = new Views
+      @experimentList ||= new Experiments()
+      applicationView = new ApplicationView
         collection: @experimentList
+        model: @experimentList
+
       if fetch
         @experimentList.fetch()
-        applicationView.render()
-      else
-        applicationView.render()
+      # Freaking out on render, infinite loop
+      applicationView.render()
 
     _experimentDetail: (experimentId) ->
       # TODO detail view, load modules, etc...

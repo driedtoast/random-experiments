@@ -7,10 +7,13 @@ require([
 ],
 
 function(app, Router) {
+  console.log("app " + app);
 
   // Define your master router on the application namespace and trigger all
   // navigation from this instance.
   app.router = new Lab.Router();
+  app.useLayout();
+  app.router.app = app;
 
   // Trigger the initial route and enable HTML5 History API support, set the
   // root folder to '/' by default.  Change in app.js.
