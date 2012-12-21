@@ -18,6 +18,8 @@ function($, _, Backbone) {
     root: "/"
   };
 
+  window.Lab.app = app;
+
   // Localize or create a new JavaScript Template object.
   var JST = window.JST = window.JST || {};
 
@@ -35,7 +37,8 @@ function($, _, Backbone) {
 
       if (!JST[path]) {
         $.ajax({ url: app.root + path, async: false }).then(function(contents) {
-          JST[path] = Handlebars.template(contents);
+          template = Handlebars.compile(contents);
+          JST[path] = template;
         });
       }
 
@@ -64,13 +67,12 @@ function($, _, Backbone) {
 
       // Create a new Layout.
       var layout = new Backbone.Layout({
-        template: name,
+        template: 'templates/layouts/' +name,
         className: "layout " + name,
         id: "layout"
       });
 
       // Insert into the DOM.
-      console.log("SETTING UP LAOUT ");
       $("#main").empty().append(layout.el);
 
       // Render the layout.

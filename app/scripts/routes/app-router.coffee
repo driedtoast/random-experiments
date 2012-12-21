@@ -9,12 +9,10 @@ define ["backbone","models_experiments", "view_application"], (Backbone, Experim
 
     initialize: (opts = {} ) ->
       opts.routes = @routes
-      console.log ' initializing router '
       super
 
 
-    _index: ->
-      console.log 'starting to render experiment list'
+    _index: =>
       fetch = !@experimentList
       @experimentList ||= new Experiments()
       applicationView = new ApplicationView
@@ -24,6 +22,7 @@ define ["backbone","models_experiments", "view_application"], (Backbone, Experim
       if fetch
         @experimentList.fetch()
       # Freaking out on render, infinite loop
+      @layout.insertView('#content', applicationView)
       applicationView.render()
 
     _experimentDetail: (experimentId) ->
