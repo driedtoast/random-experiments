@@ -20,8 +20,18 @@ define ["backbone","models_experiments", "view_application"], (Backbone, Experim
         model: @experimentList
 
       if fetch
-        @experimentList.fetch()
-      # Freaking out on render, infinite loop
+        @experimentList.fetch
+          async: false
+          error: (response, model) ->
+            # TODO is going in this block so we need to figure out why backbone isn't parsing it
+            console.log " ERROR? "
+            console.log response
+            console.log model
+
+          success: (response, model) ->
+            console.log " IN success block"
+            console.log model
+
       @layout.insertView('#content', applicationView)
       applicationView.render()
 
