@@ -1,8 +1,1 @@
-[
- {
-  id: 1,
-  name: "the box drags on",
-  description: "Drag and create boxes",
-  sources: ['','']
- }
-]
+[{"id": 1, "type": "experiment", "name": "the box drags on", "description": "Drag and create boxes", "lock_version": 1}]

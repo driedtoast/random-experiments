@@ -13,29 +13,25 @@ define ["backbone","models_experiments", "view_application"], (Backbone, Experim
 
 
     _index: =>
+      # Clean up a bit
       fetch = !@experimentList
       @experimentList ||= new Experiments()
-      applicationView = new ApplicationView
-        collection: @experimentList
-        model: @experimentList
 
       if fetch
         @experimentList.fetch
           async: false
-          error: (response, model) ->
-            # TODO is going in this block so we need to figure out why backbone isn't parsing it
-            console.log " ERROR? "
-            console.log response
-            console.log model
+          ifModified:false
+          cache: false
 
-          success: (response, model) ->
-            console.log " IN success block"
-            console.log model
+      applicationView = new ApplicationView
+        collection: @experimentList
+        model: @experimentList
 
       @layout.insertView('#content', applicationView)
       applicationView.render()
 
     _experimentDetail: (experimentId) ->
+      # TODO Should be a service like object
       # TODO detail view, load modules, etc...
       # add requires, etc...
       console.log "this is the detail for #{experimentId}"
