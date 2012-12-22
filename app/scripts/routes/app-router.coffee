@@ -2,7 +2,6 @@ define ["backbone","models_experiments", "view_application"], (Backbone, Experim
 
   class Lab.Router extends Backbone.Router
     routes:
-      'experiments'                                     : '_index'
       'experiments/:experimentId'                       : '_experimentDetail'
       "": "_index"
 

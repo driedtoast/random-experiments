@@ -16,3 +16,7 @@ define ["backbone"], (Backbone) ->
       # Collection var isn't set auto magically
       @collection = opts.collection
       super
+
+    html: (root, el) ->
+      $('#content').empty()
+      $(root).html(el)
