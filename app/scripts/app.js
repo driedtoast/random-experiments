@@ -70,7 +70,9 @@ function($, _, Backbone) {
         template: 'templates/layouts/' +name,
         className: "layout " + name,
         id: "layout"
+
       });
+
 
       // Insert into the DOM.
       $("#main").empty().append(layout.el);

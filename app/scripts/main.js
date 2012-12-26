@@ -17,7 +17,7 @@ function(app, Router) {
 
   // Trigger the initial route and enable HTML5 History API support, set the
   // root folder to '/' by default.  Change in app.js.
-  Backbone.history.start({ pushState: true, root: app.root });
+  Backbone.history.start({ pushState: false, root: window.location.pathname });
 
   // All navigation that is relative should be passed through the navigate
   // method, to be processed by the router. If the link has a `data-bypass`
@@ -35,7 +35,7 @@ function(app, Router) {
       // `Backbone.history.navigate` is sufficient for all Routers and will
       // trigger the correct events. The Router's internal `navigate` method
       // calls this anyways.  The fragment is sliced from the root.
-      Backbone.history.navigate(href, true);
+      Backbone.history.navigate(href, { trigger: true, replace: false } );
     }
   });
 
