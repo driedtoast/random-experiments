@@ -31,10 +31,6 @@ require.config({
     handlebars: {
        exports: "Handlebars"
     },
-    "bootstrap/bootstrap-modal": {
-        deps: ["lodash", "jquery"],
-        exports: "Bootstrap-Modal"
-    },
     // Backbone.LayoutManager depends on Backbone.
     "plugins/backbone.layoutmanager": ["backbone"]
   }
