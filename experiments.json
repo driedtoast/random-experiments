@@ -1,0 +1,10 @@
+[
+    {
+        "id": 1, "type": "experiment",
+        "name": "Hello World",
+        "description": "Simple example on using modules for sub view requires",
+        "lock_version": 1,
+        "source": "hello_experiment"
+    },
+    {"id": 2, "type": "experiment", "name": "the box drags on", "description": "Drag and create boxes", "lock_version": 1}
+]
