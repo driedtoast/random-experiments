@@ -17,9 +17,8 @@ require.config({
     traer: "../scripts/libs/traer",
     models_experiments: "../scripts/experiment",
     view_application: "../scripts/application-view",
-    handlebars: "../scripts/libs/handlebars"
-
-
+    handlebars: "../scripts/libs/handlebars",
+    bootstrap: "http://twitter.github.com/bootstrap/assets/js"
   },
 
   shim: {
@@ -32,7 +31,10 @@ require.config({
     handlebars: {
        exports: "Handlebars"
     },
-
+    "bootstrap/bootstrap-modal": {
+        deps: ["lodash", "jquery"],
+        exports: "Bootstrap-Modal"
+    },
     // Backbone.LayoutManager depends on Backbone.
     "plugins/backbone.layoutmanager": ["backbone"]
   }

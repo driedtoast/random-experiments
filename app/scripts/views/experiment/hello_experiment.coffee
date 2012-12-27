@@ -1,8 +1,11 @@
+# **HelloExperiment** is a simple experiment just to get a mini experimental site working with lab like projects.
+# Using [Docco](http://jashkenas.github.com/docco/) to generate the documentation.
+#   docco src/*.coffee
 define ["backbone"], (Backbone) ->
   class Views.HelloExperimentView extends Backbone.View
 
     events:
-      'click' : 'helloClick'
+      'click [data-action="close"]' : 'close'
 
     # Tells backbone layout manager to manage the view
     manage: true
@@ -15,6 +18,8 @@ define ["backbone"], (Backbone) ->
       {
         name: 'world'
       }
+
+    # Simple initializer
     initialize: (opts) ->
       # Collection var isn't set auto magically
       @collection = opts.collection
@@ -24,5 +29,7 @@ define ["backbone"], (Backbone) ->
       $('#experiment').empty()
       $(root).html(el)
 
-    helloClick: (e) ->
-      alert('This is just to say events are bound')
+    close: (e) ->
+      console.log "Closing the hello experiment"
+      @remove()
+      Backbone.history.navigate('/',true)

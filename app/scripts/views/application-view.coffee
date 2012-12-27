@@ -19,4 +19,5 @@ define ["backbone"], (Backbone) ->
 
     html: (root, el) ->
       $('#content').empty()
+      $('#experiment').empty()
       $(root).html(el)
