@@ -1,8 +1,6 @@
-# Error: Script error
-http://requirejs.org/docs/errors.html#scripterror (undefined, #undefined)
 CACHE MANIFEST
 
-# Time: Thu Dec 27 2012 15:58:04 GMT-0800 (PST)
+# Time: Thu Dec 27 2012 16:01:59 GMT-0800 (PST)
 # This manifest was created by confess.js, http://github.com/jamesgpearce/confess
 #
 # Retrieved URL: http://localhost:3501/
@@ -23,12 +21,11 @@ CACHE MANIFEST
 #  configFile: /usr/local/lib/node_modules/yeoman/lib/support/confess.json
 
 CACHE:
-./bootstrap/bootstrap-modal.js
 http://localhost:3501/images/42367757.logo_sepia.png
 http://localhost:3501/images/e037dc5b.texture.jpg
 http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png
 http://twitter.github.com/bootstrap/assets/css/bootstrap.css
-scripts/dcca89bc.amd-app.js
+scripts/e4fe0348.amd-app.js
 styles/9bf0fa2a.index.css
 
 NETWORK:

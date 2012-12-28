@@ -1,4 +1,4 @@
-define ["backbone","models_experiments", "view_application", "bootstrap/bootstrap-modal"], (Backbone, Experiments, ApplicationView) ->
+define ["backbone","models_experiments", "view_application"], (Backbone, Experiments, ApplicationView) ->
 
   class Lab.Router extends Backbone.Router
     routes:
