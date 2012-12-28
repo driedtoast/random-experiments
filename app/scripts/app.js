@@ -15,7 +15,7 @@ function($, _, Backbone) {
   // creation.
   var app = {
     // The root path to run the application.
-    root: "/"
+    root: window.location.pathname
   };
 
   window.Lab.app = app;
