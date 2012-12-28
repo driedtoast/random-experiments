@@ -1,7 +1,8 @@
 random-experiments
 ==================
 
-Place to randomly mess around with libs
+Place to randomly mess around with libs in coffeescript.
+Take a look [here](http://driedtoast.github.com/random-experiments).
 
 
 Using the following:
