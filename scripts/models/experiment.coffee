@@ -12,7 +12,7 @@ define ["backbone"], (Backbone) ->
     model: Models.Experiment
 
     path: (method) ->
-      '/experiments.json'
+      "/#{window.location.pathname}/experiments.json"
 
     url: (method) ->
       @path(method)
