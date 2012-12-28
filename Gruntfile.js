@@ -20,6 +20,9 @@ module.exports = function( grunt ) {
       dist: {
         src: 'app/scripts/**/*.coffee',
         dest: 'app/scripts'
+      },
+      options: {
+          preserve_dirs: true
       }
     },
 
@@ -51,7 +54,10 @@ module.exports = function( grunt ) {
     watch: {
       coffee: {
         files: '<config:coffee.dist.src>',
-        tasks: 'coffee reload'
+        tasks: 'coffee reload',
+        options: {
+           preserve_dirs: true
+        }
       },
       compass: {
         files: [
@@ -126,7 +132,7 @@ module.exports = function( grunt ) {
     // renames JS/CSS to prepend a hash of their contents for easier
     // versioning
     rev: {
-      js: 'scripts/**/*.js',
+      //js: 'scripts/**/*.js',
       css: 'styles/**/*.css',
       img: 'images/**'
     },
@@ -166,7 +172,7 @@ module.exports = function( grunt ) {
       baseUrl: './scripts',
       wrap: true,
       name: 'config'
-    },
+    }
   });
 
   // Alias the `test` task to run the `mocha` task instead
