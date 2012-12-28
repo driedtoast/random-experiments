@@ -1,4 +1,4 @@
-define ["backbone"], (Backbone) ->
+define ["backbone","app"], (Backbone, app) ->
 
   # Individual experiment
   class Models.Experiment extends Backbone.Model
@@ -12,7 +12,7 @@ define ["backbone"], (Backbone) ->
     model: Models.Experiment
 
     path: (method) ->
-      "/#{window.location.pathname}/experiments.json"
+      "#{app.root}/experiments.json"
 
     url: (method) ->
       @path(method)
