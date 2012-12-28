@@ -1,6 +1,8 @@
+# APP root is / (undefined, #undefined)
+# APP root is / (undefined, #undefined)
 CACHE MANIFEST
 
-# Time: Thu Dec 27 2012 16:13:53 GMT-0800 (PST)
+# Time: Thu Dec 27 2012 16:25:45 GMT-0800 (PST)
 # This manifest was created by confess.js, http://github.com/jamesgpearce/confess
 #
 # Retrieved URL: http://localhost:3501/
@@ -25,7 +27,7 @@ http://localhost:3501/images/42367757.logo_sepia.png
 http://localhost:3501/images/e037dc5b.texture.jpg
 http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png
 http://twitter.github.com/bootstrap/assets/css/bootstrap.css
-scripts/425beddd.amd-app.js
+scripts/amd-app.js
 styles/9bf0fa2a.index.css
 
 NETWORK:

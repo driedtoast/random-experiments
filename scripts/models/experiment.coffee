@@ -12,7 +12,11 @@ define ["backbone","app"], (Backbone, app) ->
     model: Models.Experiment
 
     path: (method) ->
-      "#{app.root}/experiments.json"
+      console.log "APP root is #{app.root}"
+      if app.root == '/'
+        "/experiments.json"
+      else
+        "#{app.root}/experiments.json"
 
     url: (method) ->
       @path(method)
