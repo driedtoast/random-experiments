@@ -7,6 +7,9 @@ module.exports = function( grunt ) {
   //
   grunt.initConfig({
 
+    clean: {
+      build: ['temp']
+    },
     // Project configuration
     // ---------------------
 
@@ -40,6 +43,12 @@ module.exports = function( grunt ) {
       }
     },
 
+    docco: {
+      dist:{
+        src: ['app/scripts/views/experiment/*.coffee'],
+        dest: 'temp/docs/'
+      }
+    },
     // generate application cache manifest
     manifest:{
       dest: ''
@@ -169,13 +178,18 @@ module.exports = function( grunt ) {
     rjs: {
       // no minification, is done by the min task
       optimize: 'none',
-      baseUrl: './scripts',
+      baseUrl: 'scripts',
       wrap: true,
-      name: 'config'
+      name: 'config',
+      mainConfigFile: "scripts/config.js"
     }
+
+
   });
 
   // Alias the `test` task to run the `mocha` task instead
   grunt.registerTask('test', 'mocha');
+  grunt.loadNpmTasks('grunt-docco');
+  grunt.loadNpmTasks('grunt-contrib-clean');
 
 };
