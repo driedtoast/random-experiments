@@ -113,11 +113,20 @@ nav:hover>ol>li:nth-child(4) a {
 .experiment-modal .modal-header {
     font-size: 14px;
     box-shadow: none;
-    background-color: rgba(0, 0, 0, 0.45);
-    color: #fff;
+    border: 0;
+}
+
+
+.experiment-modal .modal-header h3 {
+   background-color: rgba(0, 0, 0, 0.45);
+   color: #fff;
+   padding: 8px;
+   width: 20%;
+   font-size: 14px;
 }
 
 .experiment-close {
+    background-color: rgba(0, 0, 0, 0.45);
     border: 1px solid #FFFFFF;
     border-radius: 50px 50px 50px 50px;
     color: #FFFFFF;
@@ -127,7 +136,7 @@ nav:hover>ol>li:nth-child(4) a {
     font-size: 14px;
     height: 21px;
     margin-right: -9px;
-    margin-top: -33px;
+    margin-top: -50px;
     padding-left: 7px;
     width: 14px;
 }
