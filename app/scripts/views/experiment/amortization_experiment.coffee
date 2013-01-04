@@ -1,8 +1,8 @@
-# **Amoritization is Evil** is a simple experiment to illustrate amorization calculations based
+# **Amortization is Evil** is a simple experiment to illustrate amortization calculations based
 # on a per month payment, percent and a total. It responds with the length of time it will take to
 # pay off the amount
 define ["backbone"], (Backbone) ->
-  class Views.AmoritizationExperimentView extends Backbone.View
+  class Views.AmortizationExperimentView extends Backbone.View
 
     events:
       'click [data-action="close"]'     : 'close'
@@ -13,14 +13,14 @@ define ["backbone"], (Backbone) ->
 
     # Used by layout manager to append a '.html' to find it
     # via the relative path of app + below
-    template: 'templates/experiments/amoritization'
+    template: 'templates/experiments/amortization'
 
     serialize: ->
       {
       name: 'world'
       }
 
-    # Main method to calculate amoritization
+    # Main method to calculate amortization
     calculate: (e) ->
       # #. Get the per month, percent and the total from the inputs
 

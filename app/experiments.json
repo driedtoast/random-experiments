@@ -6,5 +6,13 @@
         "lock_version": 1,
         "source": "hello_experiment"
     },
-    {"id": 2, "type": "experiment", "name": "the box drags on", "description": "Drag and create boxes", "lock_version": 1}
+
+    {
+        "id": 2, "type": "experiment",
+        "name": "Amortization is evil",
+        "description": "Simple amortization calculator",
+        "lock_version": 1,
+        "source": "amortization_experiment"
+    },
+    {"id": 3, "type": "experiment", "name": "the box drags on", "description": "Drag and create boxes", "lock_version": 1}
 ]
