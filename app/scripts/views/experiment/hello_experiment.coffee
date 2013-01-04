@@ -30,6 +30,5 @@ define ["backbone"], (Backbone) ->
       $(root).html(el)
 
     close: (e) ->
-      console.log "Closing the hello experiment"
       @remove()
       Backbone.history.navigate('/',true)
