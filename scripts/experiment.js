@@ -28,7 +28,6 @@ define(["backbone", "app"], function(Backbone, app) {
     Experiments.prototype.model = Models.Experiment;
 
     Experiments.prototype.path = function(method) {
-      console.log("APP root is " + app.root);
       if (app.root === '/') {
         return "/experiments.json";
       } else {

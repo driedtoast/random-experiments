@@ -12,7 +12,6 @@ define ["backbone","app"], (Backbone, app) ->
     model: Models.Experiment
 
     path: (method) ->
-      console.log "APP root is #{app.root}"
       if app.root == '/'
         "/experiments.json"
       else
