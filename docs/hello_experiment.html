@@ -1,6 +1,6 @@
-<!DOCTYPE html>  <html> <head>   <title>hello_experiment.coffee</title>   <meta http-equiv="content-type" content="text/html; charset=UTF-8">   <link rel="stylesheet" media="all" href="docco.css" /> </head> <body>   <div id="container">     <div id="background"></div>          <table cellpadding="0" cellspacing="0">       <thead>         <tr>           <th class="docs">             <h1>               hello_experiment.coffee             </h1>           </th>           <th class="code">           </th>         </tr>       </thead>       <tbody>                               <tr id="section-1">             <td class="docs">               <div class="pilwrap">                 <a class="pilcrow" href="#section-1">&#182;</a>               </div>               <p><strong>HelloExperiment</strong> is a simple experiment just to get a mini experimental site working with lab like projects.
+<!DOCTYPE html>  <html> <head>   <title>hello_experiment.coffee</title>   <meta http-equiv="content-type" content="text/html; charset=UTF-8">   <link rel="stylesheet" media="all" href="docco.css" /> </head> <body>   <div id="container">     <div id="background"></div>            <div id="jump_to">         Jump To &hellip;         <div id="jump_wrapper">           <div id="jump_page">                                           <a class="source" href="debt_experiment.html">                 debt_experiment.coffee               </a>                                           <a class="source" href="hello_experiment.html">                 hello_experiment.coffee               </a>                        </div>         </div>       </div>          <table cellpadding="0" cellspacing="0">       <thead>         <tr>           <th class="docs">             <h1>               hello_experiment.coffee             </h1>           </th>           <th class="code">           </th>         </tr>       </thead>       <tbody>                               <tr id="section-1">             <td class="docs">               <div class="pilwrap">                 <a class="pilcrow" href="#section-1">&#182;</a>               </div>               <p><strong>HelloExperiment</strong> is a simple experiment just to get a mini experimental site working with lab like projects.
 Using <a href="http://jashkenas.github.com/docco/">Docco</a> to generate the documentation.
-  docco src/*.coffee</p>             </td>             <td class="code">               <div class="highlight"><pre><span class="nx">define</span> <span class="p">[</span><span class="s">&quot;backbone&quot;</span><span class="p">],</span> <span class="nf">(Backbone) -&gt;</span>
+  docco src/*.coffee</p>             </td>             <td class="code">               <div class="highlight"><pre><span class="nx">define</span> <span class="p">[</span><span class="s">&quot;backbone&quot;</span><span class="p">,</span> <span class="s">&quot;libs/sketch&quot;</span><span class="p">],</span> <span class="nf">(Backbone, SketchModule) -&gt;</span>
   <span class="k">class</span> <span class="nx">Views</span><span class="p">.</span><span class="nx">HelloExperimentView</span> <span class="k">extends</span> <span class="nx">Backbone</span><span class="p">.</span><span class="nx">View</span>
 
     <span class="nv">events:</span>
@@ -13,13 +13,32 @@ via the relative path of app + below</p>             </td>             <td class
       <span class="p">}</span></pre></div>             </td>           </tr>                               <tr id="section-4">             <td class="docs">               <div class="pilwrap">                 <a class="pilcrow" href="#section-4">&#182;</a>               </div>               <p>Simple initializer</p>             </td>             <td class="code">               <div class="highlight"><pre>    <span class="nv">initialize: </span><span class="nf">(opts) -&gt;</span></pre></div>             </td>           </tr>                               <tr id="section-5">             <td class="docs">               <div class="pilwrap">                 <a class="pilcrow" href="#section-5">&#182;</a>               </div>               <p>Collection var isn't set auto magically</p>             </td>             <td class="code">               <div class="highlight"><pre>      <span class="vi">@collection = </span><span class="nx">opts</span><span class="p">.</span><span class="nx">collection</span>
       <span class="k">super</span>
 
-    <span class="nv">html: </span><span class="nf">(root, el) -&gt;</span>
+    <span class="nv">html: </span><span class="p">(</span><span class="nx">root</span><span class="p">,</span> <span class="nx">el</span><span class="p">)</span> <span class="o">=&gt;</span>
       <span class="nx">$</span><span class="p">(</span><span class="s">&#39;#experiment&#39;</span><span class="p">).</span><span class="nx">empty</span><span class="p">()</span>
       <span class="nx">$</span><span class="p">(</span><span class="nx">root</span><span class="p">).</span><span class="nx">html</span><span class="p">(</span><span class="nx">el</span><span class="p">)</span>
 
+      <span class="nv">container = </span><span class="nx">@$</span><span class="p">(</span><span class="s">&#39;[data-elem=&quot;sketch-on-me&quot;]&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+
+      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span> <span class="s">&quot; SKETCH IS </span><span class="si">#{</span><span class="nx">Sketch</span><span class="si">}</span><span class="s">&quot;</span>
+      <span class="vi">@ctx = </span><span class="nx">Sketch</span><span class="p">.</span><span class="nx">create</span>
+        <span class="nv">container: </span><span class="nx">container</span>
+        <span class="nv">autoclear: </span><span class="kc">false</span>
+        <span class="nv">autostart: </span><span class="kc">false</span>
+
+      <span class="vi">@ctx.width = </span><span class="mi">800</span>
+      <span class="vi">@ctx.height = </span><span class="mi">250</span>
+      <span class="vi">@ctx.draw = </span><span class="o">=&gt;</span>
+        <span class="nx">@ctx</span><span class="p">.</span><span class="nx">beginPath</span><span class="p">()</span>
+        <span class="nx">@ctx</span><span class="p">.</span><span class="nx">arc</span><span class="p">(</span> <span class="nx">random</span><span class="p">(</span> <span class="nx">@ctx</span><span class="p">.</span><span class="nx">width</span> <span class="p">),</span> <span class="nx">random</span><span class="p">(</span> <span class="nx">@ctx</span><span class="p">.</span><span class="nx">height</span> <span class="p">),</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">TWO_PI</span> <span class="p">)</span>
+        <span class="vi">@ctx.fillStyle = </span><span class="s">&#39;#776d6b&#39;</span>
+        <span class="nx">@ctx</span><span class="p">.</span><span class="nx">fill</span><span class="p">()</span>
+
+      <span class="nx">@ctx</span><span class="p">.</span><span class="nx">start</span><span class="p">()</span>
+
     <span class="nv">close: </span><span class="nf">(e) -&gt;</span>
-      <span class="nx">console</span><span class="p">.</span><span class="nx">log</span> <span class="s">&quot;Closing the hello experiment&quot;</span>
       <span class="nx">@remove</span><span class="p">()</span>
+      <span class="nx">@ctx</span><span class="p">.</span><span class="nx">stop</span><span class="p">()</span>
+      <span class="nx">@ctx</span><span class="p">.</span><span class="nx">clear</span><span class="p">()</span>
       <span class="nx">Backbone</span><span class="p">.</span><span class="nx">history</span><span class="p">.</span><span class="nx">navigate</span><span class="p">(</span><span class="s">&#39;/&#39;</span><span class="p">,</span><span class="kc">true</span><span class="p">)</span>
 
 </pre></div>             </td>           </tr>                </tbody>     </table>   </div> </body> </html> 

@@ -1,7 +1,7 @@
 # **HelloExperiment** is a simple experiment just to get a mini experimental site working with lab like projects.
 # Using [Docco](http://jashkenas.github.com/docco/) to generate the documentation.
 #   docco src/*.coffee
-define ["backbone"], (Backbone) ->
+define ["backbone", "libs/sketch"], (Backbone, SketchModule) ->
   class Views.HelloExperimentView extends Backbone.View
 
     events:
@@ -25,11 +25,30 @@ define ["backbone"], (Backbone) ->
       @collection = opts.collection
       super
 
-    html: (root, el) ->
+    html: (root, el) =>
       $('#experiment').empty()
       $(root).html(el)
 
+      container = @$('[data-elem="sketch-on-me"]')[0]
+
+      console.log " SKETCH IS #{Sketch}"
+      @ctx = Sketch.create
+        container: container
+        autoclear: false
+        autostart: false
+
+      @ctx.width = 800
+      @ctx.height = 250
+      @ctx.draw = =>
+        @ctx.beginPath()
+        @ctx.arc( random( @ctx.width ), random( @ctx.height ), 3, 0, TWO_PI )
+        @ctx.fillStyle = '#776d6b'
+        @ctx.fill()
+
+      @ctx.start()
+
     close: (e) ->
-      console.log "Closing the hello experiment"
       @remove()
+      @ctx.stop()
+      @ctx.clear()
       Backbone.history.navigate('/',true)

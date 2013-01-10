@@ -1,0 +1,26 @@
+<!-- TODO make snippets for handlebars? -->
+<div class="modal experiment-modal">
+    <div class="modal-header"><h3>Debt is evil</h3>
+        <a class="experiment-close" data-action="close">x</a>
+    </div>
+    <div class="modal-body">
+        <div class="calculator">
+        <p>
+        <label>Per month:</label><input type="text" name="per_month" />
+        </p>
+        <p>
+        <label>Percentage:</label><input type="text" name="percent" />%
+        </p>
+        <p>
+        <label>Current Balance:</label><input type="text" name="current_total" />
+        </p>
+        <p>
+          <button data-action="calculate" >Calculate</button>
+        </p>
+        </div>
+        <div class="calc-results" data-elem="results"></div>
+    </div>
+    <div class="modal-footer"><a data-action="docs" href="docs/debt_experiment.html" data-bypass="true">Documentation</a></div>
+</div>
+<div class="modal-backdrop experiment-backdrop"></div>
+</div>
