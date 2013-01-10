@@ -6,7 +6,7 @@ require.config({
 
   paths: {
     // JavaScript folders.
-    libs: "../scripts/libs",
+    libs: "./scripts/libs",
     plugins: "../scripts/plugins",
 
     // Libraries.
