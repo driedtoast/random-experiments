@@ -105,7 +105,7 @@ define(["backbone", "libs/physi", "libs/three.min"], function(Backbone, PhysiMod
       $(root).html(el);
       'use strict';
 
-      Physijs.scripts.worker = '../scripts/libs/physijs_worker.js';
+      Physijs.scripts.worker = './scripts/libs/physijs_worker.js';
       Physijs.scripts.ammo = '../libs/ammo.js';
       return this.initScene();
     };
