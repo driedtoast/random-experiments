@@ -37,7 +37,6 @@ define(["backbone", "libs/sketch"], function(Backbone, SketchModule) {
       $('#experiment').empty();
       $(root).html(el);
       container = this.$('[data-elem="sketch-on-me"]')[0];
-      console.log(" SKETCH IS " + Sketch);
       this.ctx = Sketch.create({
         container: container,
         autoclear: false,

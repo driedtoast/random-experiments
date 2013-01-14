@@ -20029,7 +20029,10 @@ require.config({
        exports: "Handlebars"
     },
     // Backbone.LayoutManager depends on Backbone.
-    "plugins/backbone.layoutmanager": ["backbone"]
+    "plugins/backbone.layoutmanager": ["backbone"],
+
+    "libs/physi": ["libs/three.min"]
+
   }
 
 });
