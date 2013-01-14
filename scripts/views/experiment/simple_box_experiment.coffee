@@ -117,8 +117,8 @@ define ["backbone", "libs/physi", "libs/three.min"], (Backbone, PhysiModule, Thr
       $('#experiment').empty()
       $(root).html(el)
 
-      'use strict'
-      Physijs.scripts.worker = './scripts/libs/physijs_worker.js'
+      # 'use strict'
+      # Physijs.scripts.worker = '../libs/physijs_worker.js'
       Physijs.scripts.ammo = '../libs/ammo.js'
 
 

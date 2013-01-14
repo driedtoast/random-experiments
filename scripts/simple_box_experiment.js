@@ -103,9 +103,6 @@ define(["backbone", "libs/physi", "libs/three.min"], function(Backbone, PhysiMod
     SimpleBoxExperimentView.prototype.html = function(root, el) {
       $('#experiment').empty();
       $(root).html(el);
-      'use strict';
-
-      Physijs.scripts.worker = './scripts/libs/physijs_worker.js';
       Physijs.scripts.ammo = '../libs/ammo.js';
       return this.initScene();
     };
