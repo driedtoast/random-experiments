@@ -30,8 +30,6 @@ define ["backbone", "libs/sketch"], (Backbone, SketchModule) ->
       $(root).html(el)
 
       container = @$('[data-elem="sketch-on-me"]')[0]
-
-      console.log " SKETCH IS #{Sketch}"
       @ctx = Sketch.create
         container: container
         autoclear: false

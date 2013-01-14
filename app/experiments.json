@@ -14,5 +14,10 @@
         "lock_version": 1,
         "source": "debt_experiment"
     },
-    {"id": 3, "type": "experiment", "name": "the box drags on", "description": "Drag and create boxes", "lock_version": 1}
+    {   "id": 3, "type": "experiment",
+        "name": "the box drags on",
+        "description": "Drag and create boxes using threejs / physijs",
+        "lock_version": 1,
+        "source": "simple_box_experiment"
+    }
 ]
