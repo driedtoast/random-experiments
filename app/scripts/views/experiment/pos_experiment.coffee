@@ -26,6 +26,16 @@ define ["backbone","libs/pos.tagger"], (Backbone, POSTaggerModule) ->
         words = new Lexer().lex(textValue)
         taggedWords = new POSTagger().tag(words)
         resultOutput = ""
+
+        firstWord = taggedWords[0]
+        firstTag = firstWord[1]
+        if _.include(['WRB','WP','WDT'], firstTag)
+          resultOutput += "<div class=\"type\" >Looks like you might be asking a question? <br /></div>"
+        else if _.include(['PP','VB', 'VBN'], firstTag)
+          resultOutput += "<div class=\"type\" >Do you need to do something? <br /></div>"
+        else if 'PRP' == firstTag  # Also need PDT for all, both, etc...
+          resultOutput += "<div class=\"type\" >Need to communicate someone for this? <br /></div>"
+
         for taggedWord in taggedWords
           word = taggedWord[0]
           tag = taggedWord[1]
