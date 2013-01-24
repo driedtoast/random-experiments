@@ -19,5 +19,11 @@
         "description": "Drag and create boxes using threejs / physijs",
         "lock_version": 1,
         "source": "simple_box_experiment"
+    },
+    {   "id": 4, "type": "experiment",
+        "name": "parts of speech",
+        "description": "Analysis of parts of speech using js-pos",
+        "lock_version": 1,
+        "source": "pos_experiment"
     }
 ]
