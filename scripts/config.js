@@ -6,6 +6,7 @@ require.config({
 
   paths: {
     // JavaScript folders.
+    // Needs to be ./scripts/libs when publish
     libs: "./scripts/libs",
     plugins: "../scripts/plugins",
 
@@ -34,7 +35,8 @@ require.config({
     // Backbone.LayoutManager depends on Backbone.
     "plugins/backbone.layoutmanager": ["backbone"],
 
-    "libs/physi": ["libs/three.min"]
+    "libs/physi": ["libs/three.min"],
+    "libs/pos.tagger": ["libs/lexer", "libs/lexicon"]
 
   }
 

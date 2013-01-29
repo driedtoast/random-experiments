@@ -1,6 +1,6 @@
 CACHE MANIFEST
 
-# Time: Mon Jan 14 2013 12:06:52 GMT-0800 (PST)
+# Time: Tue Jan 29 2013 07:41:03 GMT-0800 (PST)
 # This manifest was created by confess.js, http://github.com/jamesgpearce/confess
 #
 # Retrieved URL: http://localhost:3501/
@@ -21,15 +21,14 @@ CACHE MANIFEST
 #  configFile: /usr/local/lib/node_modules/yeoman/lib/support/confess.json
 
 CACHE:
-http://localhost:3501/images/42367757.logo_sepia.png
+http://localhost:3501/images/d0eb6ea0.logo_color.png
 http://localhost:3501/images/e037dc5b.texture.jpg
 http://twitter.github.com/bootstrap/assets/css/bootstrap.css
-https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png
 images/03f7abbf.twitter-logo.png
 images/0657271e.github-logo.png
 images/f407a0c0.linkedin-logo.png
 scripts/amd-app.js
-styles/99e8b500.index.css
+styles/2286ed49.index.css
 
 NETWORK:
 *

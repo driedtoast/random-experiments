@@ -51,7 +51,6 @@ define ["backbone", "libs/physi", "libs/three.min"], (Backbone, PhysiModule, Thr
       container.appendChild( @renderer.domElement )
 
       @scene = new Physijs.Scene()
-      #  fixedTimeStep: 1 / 120
       @scene.setGravity(new THREE.Vector3( 0, -30, 0 ))
       @scene.addEventListener(
         'update',
@@ -92,8 +91,6 @@ define ["backbone", "libs/physi", "libs/three.min"], (Backbone, PhysiModule, Thr
         0.6, # Friction
         0.3 # restitution
       )
-      #material.map.wrapS = material.map.wrapT = THREE.RepeatWrapping
-      #material.map.repeat.set( 0.5, 0.5 )
 
       shape = new Physijs.BoxMesh(new THREE.CubeGeometry( 3, 3, 3 ), material)
       shape.material.color.setRGB( Math.random() * 100 / 100, Math.random() * 100 / 100, Math.random() * 100 / 100 )
@@ -110,17 +107,13 @@ define ["backbone", "libs/physi", "libs/three.min"], (Backbone, PhysiModule, Thr
         Math.random() * Math.PI
       )
       @scene.add( shape )
-      # new TWEEN.Tween(shape.material).to({opacity: 1}, 500).start()
 
 
     html: (root, el) =>
       $('#experiment').empty()
       $(root).html(el)
 
-      # 'use strict'
-      # Physijs.scripts.worker = '../libs/physijs_worker.js'
       Physijs.scripts.ammo = '../libs/ammo.js'
-
 
       @initScene()
 
