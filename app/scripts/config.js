@@ -7,7 +7,7 @@ require.config({
   paths: {
     // JavaScript folders.
     // Needs to be ./scripts/libs when publish
-    libs: "../scripts/libs",
+    libs: "./scripts/libs",
     plugins: "../scripts/plugins",
 
     // Libraries.
