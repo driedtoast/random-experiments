@@ -36,8 +36,8 @@ require.config({
     "plugins/backbone.layoutmanager": ["backbone"],
 
     "libs/physi": ["libs/three.min"],
-    "libs/pos.tagger": ["libs/lexer", "libs/lexicon"]
-
+    "libs/pos.tagger": ["libs/lexer", "libs/lexicon"],
+    "libs/md5": { exports: 'md5'}
   }
 
 });

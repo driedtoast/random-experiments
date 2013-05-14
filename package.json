@@ -3,5 +3,7 @@
   "name": "",
   "version": "0.0.0",
   "dependencies": {},
-  "devDependencies": {}
+  "devDependencies": {
+    "grunt-contrib-clean": "~0.4.0a"
+  }
 }
