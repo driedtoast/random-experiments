@@ -33,7 +33,7 @@ function($, _, Backbone) {
     },
 
     fetch: function(path) {
-      path = path + ".html";
+      path = path + ".hbs";
 
       if (!JST[path]) {
         $.ajax({ url: app.root + path, async: false }).then(function(contents) {

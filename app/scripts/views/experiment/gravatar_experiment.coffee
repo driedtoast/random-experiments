@@ -32,7 +32,7 @@ define ["backbone", "libs/md5"], (Backbone, md5) ->
 
     changeAvatar: (e) =>
       if (emailAddress = $(e.currentTarget).val())
-        imageUrl = "http://www.gravatar.com/avatar/#{md5(emailAddress)}.jpg?s=80"
+        imageUrl = "http://www.gravatar.com/avatar/#{md5(emailAddress)}.jpg?s=80&d=https://d1vk1po2s93fx0.cloudfront.net/assets/info/avatar-empty-f47c5c13282838f4afa0d2dc90acb42a.png"
         avatarEl = @$('#avatar')
         avatarEl.empty()
         avatarEl.append "<img src=\"#{imageUrl}\" />"
