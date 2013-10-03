@@ -20,7 +20,6 @@ module.exports = class HelloExperimentView extends View
     }
 
   afterRender: =>
-    console.log " well its trying to do after render"
     container = @$('[data-elem="sketch-on-me"]')[0]
     @ctx = Sketch.create
       container: container

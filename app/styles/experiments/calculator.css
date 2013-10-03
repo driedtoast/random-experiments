@@ -1,16 +1,11 @@
-.calculator {
-  line-height: 20px;
-}
-
 .calculator label {
-  font-size: 14px;
-  color: #d2691e;
+  display: block;
 }
 
 .calculator input {
-  font-size: 14px;
   border-radius: 5px;
-  border: 1px solid #d2691e;
+  padding-left: 2px;
+  border: 1px solid rgba(66, 47, 2, .35);
 }
 
 .calc-results {

@@ -12,6 +12,17 @@ a:link, a:hover, a:focus, a:active, a:visited
   text-decoration: none
   color: #7e3d1b
 
+
+#footer
+  width: 100%
+  padding-top: 80px
+  padding-left: 38px
+  display: table
+
+#ad-area
+  width: 80%
+  display: table-cell
+
 .container
   margin: 0 auto
   position: absolute
@@ -20,9 +31,6 @@ a:link, a:hover, a:focus, a:active, a:visited
   top: 0
   bottom: 0
   width: 80%
-
-.content
-  padding-top: 45px
 
 .header 
   display: table
@@ -65,13 +73,9 @@ a:link, a:hover, a:focus, a:active, a:visited
 
 /* random styles */
 .social
-  display: block
-  width: 100%
-  right: 8px
-  bottom: 8px
-  position: absolute
-
-.social-bar 
+  width: 20%
+  display: table-cell
+  vertical-align: top
   text-align: right
 
 .social-icon 
@@ -83,22 +87,26 @@ a:link, a:hover, a:focus, a:active, a:visited
 /* Experiment related styles */
 .experiment-modal
   width: 100%
-  height: 100%
   background: none repeat scroll 0 0 rgba(221, 221, 221, 0.25)
-  margin-left: 0
   border-radius: 5px
-  height: 100%
-  left: 0
-  position: absolute
-  top: 95px
+  padding:
+    bottom: 10px
+    left: 20px
 
+  button
+    font-size: 0.8em
+    font-weight: 300
+    border-radius: 5px
+    border: 1px solid rgba(66, 47, 2, .35)
+    color: rgba(66, 47, 2, .35)
+    background-color: #fff
+    padding: 10px
+      top: 3px
+      bottom: 3px
 
   .modal-body
     font-size: 1em
     font-weight: 300
-    padding: 18px
-      top: 0
-    height: 92%
 
   .modal-footer
     font-size: 0.6em
@@ -107,15 +115,18 @@ a:link, a:hover, a:focus, a:active, a:visited
     border-radius: 0
     border: 0
     box-shadow: none
-    padding: 5px
+    padding:
+      top: 5px
+      bottom: 5px
 
   .modal-header
+    height: 70px
+
     h3 
       color: $emphasis-text-color
       font-size: 2.5em
-      line-height: 0
+      line-height: 2em
       font-weight: 100
-      padding-left: 20px
 
 .experiment-backdrop 
   background-color: #909090
@@ -128,8 +139,8 @@ a:link, a:hover, a:focus, a:active, a:visited
   color: $emphasis-text-color
   content: "x"
   cursor: pointer
-  right: 8px
-  top: 8px
+  right: 0
+  top: 148px
   font-size: 14px
   height: 21px
   padding-left: 7px

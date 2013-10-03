@@ -13,6 +13,12 @@ module.exports = class SimpleBoxExperimentView extends View
   template: template
   template = null
 
+  initialize: ->
+    super
+    thirdPartyRoot = window.base_path || ''
+    Physijs.scripts.worker = "#{thirdPartyRoot}/third-party/physijs_worker.js"
+    Physijs.scripts.ammo = "#{thirdPartyRoot}/third-party/ammo.js"
+
   addLight: ->
     light = new THREE.DirectionalLight( 0xFFFFFF )
     light.position.set( 20, 40, -15 )
@@ -97,6 +103,4 @@ module.exports = class SimpleBoxExperimentView extends View
 
 
   afterRender: =>
-    Physijs.scripts.ammo = '../vendors/ammo.js'
     @initScene()
-    console.log " well its trying to do after render"

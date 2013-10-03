@@ -6,6 +6,7 @@ module.exports = class PosExperimentView extends View
 
   events:
     'click [data-action="analyze"]'     : 'analyze'
+    'click [data-action="close"]'       : 'close'
 
   autoRender: true
 
