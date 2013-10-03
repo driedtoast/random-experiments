@@ -219,10 +219,9 @@ routes = require('scripts/routes');
 $(function() {
   window.base_path = '/random-experiments';
   return new Application({
-    routes: routes
-  }, {
+    routes: routes,
     pushState: true,
-    root: window.base_path + '/'
+    root: "" + window.base_path + "/"
   });
 });
 
