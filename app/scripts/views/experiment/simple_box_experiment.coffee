@@ -1,7 +1,5 @@
 View = require 'scripts/views/base/view'
 template = require 'templates/experiments/simple_box'
-PhysiModule = require "vendors/physi"
-ThreeModule = require "vendors/three.min"
 
 # **Box Physics Experiment** is a simple experiment just to get used to threejs and physijs.
 module.exports = class SimpleBoxExperimentView extends View
@@ -15,11 +13,11 @@ module.exports = class SimpleBoxExperimentView extends View
   template: template
   template = null
 
-  # Simple initializer
-  initialize: (opts) ->
-    # Collection var isn't set auto magically
-    @collection = opts.collection
+  initialize: ->
     super
+    thirdPartyRoot = window.base_path || ''
+    Physijs.scripts.worker = "#{thirdPartyRoot}/third-party/physijs_worker.js"
+    Physijs.scripts.ammo = "#{thirdPartyRoot}/third-party/ammo.js"
 
   addLight: ->
     light = new THREE.DirectionalLight( 0xFFFFFF )
@@ -103,8 +101,6 @@ module.exports = class SimpleBoxExperimentView extends View
     @scene.add( shape )
 
 
-  render: =>
-    super
-    Physijs.scripts.ammo = '../vendors/ammo.js'
+
+  afterRender: =>
     @initScene()
-    @

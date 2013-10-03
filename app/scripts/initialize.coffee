@@ -5,6 +5,6 @@ routes = require 'scripts/routes'
 $ ->
   new Application   
   	routes: routes, 
-    pushState: false
+    pushState: true
 
   window.base_path = window.location.pathname

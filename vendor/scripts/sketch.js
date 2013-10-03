@@ -684,6 +684,8 @@ if ( !Date.now ) {
     };
 }
 
+window.Sketch = Sketch;
+
 /**
  * requestAnimationFrame polyfill by Erik Möller
  * Fixes from Paul Irish and Tino Zijdel
