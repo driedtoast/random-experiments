@@ -115,7 +115,8 @@ module.exports = Application = (function(_super) {
 
   Application.prototype.initRouter = function(routes, options) {
     options.root = window.base_path + '/';
-    return Application.__super__.initRouter.apply(this, arguments);
+    this.router = new Chaplin.Router(routes, options);
+    return routes(this.router.match);
   };
 
   return Application;
