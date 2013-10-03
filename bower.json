@@ -22,12 +22,6 @@
         "jquery": "*"
       },
       "main": "backbone.js"
-    },
-    "threejs": {
-      "main": "three.js"
-    },
-    "ammo.js": {
-      "main": "ammo.js"
     }
   }
 }
