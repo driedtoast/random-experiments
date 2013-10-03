@@ -10,6 +10,7 @@ Setup includes:
 * Install [node](http://nodejs.org/) / npm
 * Install brunch (http://brunch.io/) `npm install -g brunch`
 * Install dependencies `npm install`
+* Install javascript dependencies `bower install`
 
 Inside the random experiments directory run:
 * `brunch build`
@@ -28,3 +29,9 @@ Using the following:
 * make list a card view
 * add ads
 * push updates to gh-pages branch
+
+
+,
+    "physijs":"git://github.com/chandlerprall/Physijs.git"
+,
+    "Physijs":"git://github.com/chandlerprall/Physijs.git"

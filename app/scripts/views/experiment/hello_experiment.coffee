@@ -19,10 +19,8 @@ module.exports = class HelloExperimentView extends View
       name: 'world'
     }
 
-  #TODO make this in render?
-  html: (root, el) =>
-    $('#experiment').empty()
-    $(root).html(el)
+  afterRender: =>
+    console.log " well its trying to do after render"
     container = @$('[data-elem="sketch-on-me"]')[0]
     @ctx = Sketch.create
       container: container

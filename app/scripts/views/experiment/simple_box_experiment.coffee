@@ -95,8 +95,8 @@ module.exports = class SimpleBoxExperimentView extends View
     @scene.add( shape )
 
 
-  render: =>
-    super
+
+  afterRender: =>
     Physijs.scripts.ammo = '../vendors/ammo.js'
     @initScene()
-    @
+    console.log " well its trying to do after render"

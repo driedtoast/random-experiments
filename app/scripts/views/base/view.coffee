@@ -29,6 +29,12 @@ module.exports = class View extends Chaplin.View
       templateFunc = template
     templateFunc
 
+
+  render: ->
+    returnValue = super
+    @afterRender?()
+    returnValue
+
   close: (e) ->
     @remove()
     Backbone.history.navigate('/#',true)

@@ -9,10 +9,11 @@
     "components"
   ],
   "dependencies": {
-    "chaplin": "~0.10.0",
-    "lodash": "~1.3.1",
-    "jquery": "~2.0.2",
-    "normalize-css": "~2.1.2"
+    "chaplin": "*",
+    "lodash": "1.3.1",
+    "jquery": "*",
+    "normalize-css": "*",
+    "handlebars.js": ">= 1.0.12"
   },
   "overrides": {
     "backbone": {
@@ -21,6 +22,12 @@
         "jquery": "*"
       },
       "main": "backbone.js"
+    },
+    "threejs": {
+      "main": "three.js"
+    },
+    "ammo.js": {
+      "main": "ammo.js"
     }
   }
 }
