@@ -31,4 +31,4 @@ module.exports = class View extends Chaplin.View
 
   close: (e) ->
     @remove()
-    Backbone.history.navigate('/',true)
+    Backbone.history.navigate('/#',true)

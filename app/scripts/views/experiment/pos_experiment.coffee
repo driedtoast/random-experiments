@@ -1,6 +1,5 @@
 View = require 'scripts/views/base/view'
 template = require 'templates/experiments/pos'
-POSTaggerModule = require 'vendors/pos.tagger'
 
 # **Parts of Speech parsing** is an experiment involving parts of speech
 module.exports = class PosExperimentView extends View
@@ -60,11 +59,6 @@ module.exports = class PosExperimentView extends View
       emotion: 1
       }
     ]
-
-
-  initialize: (opts) ->
-    @collection = opts.collection
-    super
 
   # Grabs the first verb
   firstVerb: (taggedWords) ->

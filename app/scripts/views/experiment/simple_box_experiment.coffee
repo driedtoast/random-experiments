@@ -1,7 +1,5 @@
 View = require 'scripts/views/base/view'
 template = require 'templates/experiments/simple_box'
-PhysiModule = require "vendors/physi"
-ThreeModule = require "vendors/three.min"
 
 # **Box Physics Experiment** is a simple experiment just to get used to threejs and physijs.
 module.exports = class SimpleBoxExperimentView extends View
@@ -14,12 +12,6 @@ module.exports = class SimpleBoxExperimentView extends View
 
   template: template
   template = null
-
-  # Simple initializer
-  initialize: (opts) ->
-    # Collection var isn't set auto magically
-    @collection = opts.collection
-    super
 
   addLight: ->
     light = new THREE.DirectionalLight( 0xFFFFFF )

@@ -15,5 +15,4 @@ module.exports = class ExperimentRowView extends View
   template: template
 
   getTemplateData: =>
-    console.log " what is this "
-    { id: @model.i, name: @model.get('name'), description: @model.get('description') }
+    { id: @model.id, name: @model.get('name'), description: @model.get('description') }

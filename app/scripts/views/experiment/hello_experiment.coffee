@@ -1,5 +1,4 @@
 View = require 'scripts/views/base/view'
-SketchModule = require 'vendors/sketch'
 template = require 'templates/experiments/hello_world'
 
 # **HelloExperiment** is a simple experiment just to get a mini experimental site working with lab like projects.
@@ -15,17 +14,12 @@ module.exports = class HelloExperimentView extends View
   template: template
   template = null
 
-  serialize: ->
+  getTemplateData: ->
     {
       name: 'world'
     }
 
-  # Simple initializer
-  initialize: (opts) ->
-    # Collection var isn't set auto magically
-    @collection = opts.collection
-    super
-
+  #TODO make this in render?
   html: (root, el) =>
     $('#experiment').empty()
     $(root).html(el)

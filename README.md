@@ -4,8 +4,7 @@ random-experiments
 Place to randomly mess around with libs in coffeescript.
 Take a look [here](http://driedtoast.github.com/random-experiments).
 
-
-*Switching to Brunch*
+TODO add a some random image here
 
 Setup includes:
 * Install [node](http://nodejs.org/) / npm
@@ -18,13 +17,14 @@ Inside the random experiments directory run:
 
 
 Using the following:
-* [Yeoman](http://yeoman.io/) for coffescript compiling and package management
+* TODO list the libs here (brunch, bower, etc...)
 * [Traer](http://code.google.com/p/traer-js/) for physics eventually
-
-
-I use yeoman so start it by doing `yeoman server`
 
 
 # TODO #
 * get this to work "docco-brunch": "git+https://github.com/jcruz2us/docco-brunch.git",
-* move to chaplin framework?
+* Fix the hello world drawing with render
+* style modal windows
+* make list a card view
+* add ads
+* push updates to gh-pages branch
