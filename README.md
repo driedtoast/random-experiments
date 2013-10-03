@@ -4,10 +4,8 @@ random-experiments
 Place to randomly mess around with libs in coffeescript.
 Take a look [here](http://driedtoast.github.com/random-experiments).
 
-TODO add a some random image here
-
 ![1](http://imgs.xkcd.com/comics/im_so_random.png  "XKCD Random")
-
+[source:XKCD I'm So Random](http://xkcd.com/1210/)        
 
 
 Setup includes:
@@ -43,6 +41,3 @@ Looking to use:
 * [Processing](http://processingjs.org/)
 * [Raphael](http://raphaeljs.com/)
 * [d3](http://d3js.org/)
-
-
-[1]: http://xkcd.com/1210/        "XKCD I'm So Random"
