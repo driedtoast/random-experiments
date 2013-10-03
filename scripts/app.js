@@ -217,12 +217,13 @@ Application = require('scripts/application');
 routes = require('scripts/routes');
 
 $(function() {
-  new Application({
+  window.base_path = '/random-experiments';
+  return new Application({
     routes: routes
   }, {
-    pushState: true
+    pushState: true,
+    root: window.base_path + '/'
   });
-  return window.base_path = window.location.pathname;
 });
 
 });
@@ -319,8 +320,8 @@ module.exports = Experiments = (function(_super) {
 
 ;require.register("scripts/routes", function(exports, require, module) {
 module.exports = function(match) {
-  match('random-experiments/', 'experiment#index');
-  return match('random-experiments/experiments/:id', 'experiment#show');
+  match('', 'experiment#index');
+  return match('experiments/:id', 'experiment#show');
 };
 
 });
@@ -413,7 +414,7 @@ module.exports = View = (function(_super) {
 
   View.prototype.close = function(e) {
     this.remove();
-    return Backbone.history.navigate('/random-experiments/#', true);
+    return Backbone.history.navigate('/#', true);
   };
 
   return View;
