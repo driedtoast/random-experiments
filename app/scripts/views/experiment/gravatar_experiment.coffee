@@ -1,5 +1,4 @@
 View = require 'scripts/views/base/view'
-md5 = require 'vendors/md5'
 template = require 'templates/experiments/gravatar'
 
 # **GravatarExperiment** is a simple experiment to display the gravatar based on an email
@@ -14,13 +13,6 @@ module.exports = class GravatarExperimentView extends View
     
   template: template
   template = null
-  
-
-  # Simple initializer
-  initialize: (opts) ->
-    # Collection var isn't set auto magically
-    @collection = opts.collection
-    super
 
   changeAvatar: (e) =>
     if (emailAddress = $(e.currentTarget).val())

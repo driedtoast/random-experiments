@@ -6,8 +6,8 @@ ApplicationView = require 'scripts/views/application-view'
 
 module.exports = class ExperimentController extends Controller
   setupExperiments: =>
-    fetch = !@experimentList
-    @experimentList ||= new Experiments()
+    # TODO cache the call?
+    @experimentList = new Experiments()
     @experimentList.fetch
         async: false
         ifModified:false
@@ -20,18 +20,16 @@ module.exports = class ExperimentController extends Controller
     applicationView = new ApplicationView
       collection: experimentList
       region: 'main'
-    console.log experimentList
     applicationView
 
-  show: (params) ->
-    experimentId = params[0]
+  show: (params) =>
+    experimentId = params.id
     experimentList = @setupExperiments()
     experiment = experimentList.get(experimentId)
     experimentSource = "scripts/views/experiment/#{experiment.get('source')}"
-    # TODO try and define a module in requirejs
-    # require.modules.getModule(experiment)
-    requirejs [experimentSource], (ExperimentView) =>
-      experimentView = new ExperimentView
-        collection: experimentList
-        model: experiment
-        region: 'experiment'
+    
+    ExperimentView = require experimentSource
+    experimentView = new ExperimentView
+      collection: experimentList
+      model: experiment
+      region: 'experiment'

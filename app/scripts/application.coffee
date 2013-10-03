@@ -8,5 +8,4 @@ module.exports = class Application extends Chaplin.Application
   initDispatcher: (options) ->
     options.controllerPath = 'scripts/controllers/'
     options.controllerSuffix =  '-controller'
-    console.log options
     @dispatcher = new Chaplin.Dispatcher options

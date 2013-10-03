@@ -59,7 +59,3 @@ module.exports = class DebtExperimentView extends View
       result = @how_long(currentTotal, percent, perMonth)
       resultOutput = "<div class=\"months\" >Months: #{result.count}</div><div class=\"interest\" >Total Interest: #{result.interest}</div>"
       @$('[data-elem="results"]').html(resultOutput)
-
-  initialize: (opts) ->
-    @collection = opts.collection
-    super
