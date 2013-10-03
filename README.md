@@ -27,3 +27,4 @@ I use yeoman so start it by doing `yeoman server`
 
 # TODO #
 * get this to work "docco-brunch": "git+https://github.com/jcruz2us/docco-brunch.git",
+* move to chaplin framework?

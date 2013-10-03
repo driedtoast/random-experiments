@@ -5,7 +5,9 @@
         <title></title>
         <meta name="description" content="" />
         <meta name="viewport" content="width=device-width" />
-
+        
+        <script src="scripts/vendor.js"></script>
+        <script src="scripts/app.js"></script>
         <link rel="stylesheet" href="http://twitter.github.com/bootstrap/assets/css/bootstrap.css" />
         <link rel="stylesheet" href="styles/index.css" />
     </head>
@@ -14,20 +16,24 @@
     <div class="ribbon">
         <a href="http://github.com/driedtoast/random-experiments" rel="me">Fork me on GitHub</a>
     </div>
+
+    <div class="container">    
+        <div class="header"  >
+            <div class="title">
+            <a href="#"><img src="/images/logo_color.png" border="0"/></a>
+            </div>
+            <div class="nav">
+                <a href="http://driedtoast.github.com">projects</a> <a href="http://driedtoast.github.com/blog">blog</a>  <a href="//www.driedtoast.com" class="last">about</a>  
+            </div>
+       </div>
+
     
-    <nav role="navigation">
-        <ol>
-            <li><a href="http://driedtoast.github.com">Projects</a></li>
-            <li><a href="http://driedtoast.posterous.com/">Thoughts</a></li>
-            <li><a href="http://www.driedtoast.com">About</a></li>
-            <li><a href="#">Lab</a></li>
-        </ol>
-    </nav>
-    <div role="main" id="main" class="container">
-        You shouldn't see this for that long while we load the experiment list.
+    <div role="main" id="main" class="content">
     </div>
     
-    <script data-main="scripts/config.js" src="scripts/require.js"></script>
+
+
+    </div>
 
     <div class="social">
        <div class="social-bar">
@@ -36,6 +42,9 @@
        <a href="http://linkedin.com/dmarchant"><img src="images/linkedin-logo.png" class="social-icon" /></a>
        </div>
     </div>
+
+    <script>require('scripts/initialize');</script>
+
 
     </body>
 </html>
