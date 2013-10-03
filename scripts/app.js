@@ -113,6 +113,11 @@ module.exports = Application = (function(_super) {
     return this.dispatcher = new Chaplin.Dispatcher(options);
   };
 
+  Application.prototype.initRouter = function(routes, options) {
+    options.root = window.base_path + '/';
+    return Application.__super__.initRouter.apply(this, arguments);
+  };
+
   return Application;
 
 })(Chaplin.Application);
