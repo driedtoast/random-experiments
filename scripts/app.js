@@ -319,8 +319,8 @@ module.exports = Experiments = (function(_super) {
 
 ;require.register("scripts/routes", function(exports, require, module) {
 module.exports = function(match) {
-  match('', 'experiment#index');
-  return match('experiments/:id', 'experiment#show');
+  match('random-experiments', 'experiment#index');
+  return match('random-experiments/experiments/:id', 'experiment#show');
 };
 
 });
