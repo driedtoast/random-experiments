@@ -1,83 +1,66 @@
 /* Will be compiled down to a single stylesheet with your sass files */
 
 body {
-    background-color: #6D695C;
+    background-color: #FFFFFF;
     margin: 0;
-    background-image: url('../images/texture.jpg');
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: sans-serif;
     color: #422f02;
 }
 
-
-nav {
-    width: 5em;
-    height: 8em;
-    padding: 0;
-    overflow: hidden;
-    background: url('../images/logo_color.png') no-repeat  left top;
-    margin-left: 1em;
-    margin-top: 1em;
-    opacity: .5;
-}
-
-nav:hover {
-    width: 8em;
-    height: 8em;
-    opacity: 1;
-}
-
-nav ol {
-    margin: 0;
-    padding: 0;
-    list-style-type: none; }
 
 a:link, a:hover, a:focus, a:active, a:visited {
     text-decoration: none;
     color: #7e3d1b;
 }
 
-nav a:link, nav a:hover, nav a:focus, nav a:active, nav a:visited {
-    text-decoration: none;
-    color: #ddd;
+.container {
+  margin: 0 auto;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 80%; }
+
+.content {
+    padding-top: 45px;
 }
 
-nav a {
-    background-color: rgba(126, 61, 27, 0.65);
-    border: 1px solid rgba(126, 61, 27, 0.75);
-    display: block;
-    position: absolute;
-    top: -10em;
-    left: 0em;
-    border-radius: 4em;
-    padding: 1.5em 0;
-    width: 4.5em;
-    text-align: center;
-    box-shadow: .15em 0 .5em rgba(50, 50, 50, 0.75);
-    -webkit-transition: all 0.2s ease-in;
-    -moz-transition: all 0.2s ease-in;
-    -ms-transition: all 0.2s ease-in;
-    -o-transition: all 0.2s ease-in;
-    transition: all 0.2s ease-in;
-    font-size: 10pt;
-    text-transform: lowercase;
-}
+.header {
+  display: table;
+  width: 100%;
+  padding-top: 10px; }
 
-nav:hover>ol>li:nth-child(1) a {
-    left: 9em;
-    top: .5em;
-    z-index: 5;}
+.sub-header {
+  display: table;
+  height: 30px;
+  margin: 0 auto;
+  width: 80%; }
 
-nav:hover>ol>li:nth-child(2) a {
-    left: 8.3em;
-    top: 5em; }
+.logo {
+  display: table-cell;
+  width: 150px;
+  padding: 5px; }
 
-nav:hover>ol>li:nth-child(3) a {
-    left: 4.7em;
-    top: 8em; }
+.nav {
+  display: table-cell;
+  width: 250px;
+  vertical-align: top;
+  padding: 5px;
+  text-align: right; }
+  .nav a {
+    color: rgba(66, 47, 2, 0.85);
+    font-size: 18px;
+    font-variant: small-caps; }
+    .nav a:after {
+      content: " | ";
+      color: black; }
+    .nav a.last:after {
+      content: ""; }
 
-nav:hover>ol>li:nth-child(4) a {
-    left: 0em;
-    top: 9.5em; }
+.title {
+  display: table-cell;
+  align: right; }
 
 /* random styles */
 .social {
@@ -194,18 +177,14 @@ ul.experiment-list {
     right: -3.5em;
     top: 5.5em;
     -moz-transform: rotate(90deg);
-    -webkit-transform: rotate(90deg);
-    -moz-box-shadow: 0 0 1em #888;
-    -webkit-box-shadow: 0 0 1em #888;
+    -webkit-transform: rotate(90deg);    
 }
 .ribbon a {
-    border: 1px solid rgba(66, 47, 2, 0.25);
     color: #fff;
     display: block;
-    font: bold 81.25% 'Helvetiva Neue', Helvetica, Arial, sans-serif;
-    margin: 0.05em 0;
-    padding: 0.5em 3.5em 0.5em 3.5em;
+    border: 0;
+    font: 300 81.25% 'Helvetiva Neue', Helvetica, Arial, sans-serif;
+    padding: 0.1em 3.5em 0.1em 3.5em;
     text-align: center;
     text-decoration: none;
-    text-shadow: 0 0 0.5em #444;
 }
