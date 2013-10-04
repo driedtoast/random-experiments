@@ -91,7 +91,7 @@
   globals.require.brunch = true;
 })();
 require.register("scripts/application", function(exports, require, module) {
-var Application, routes, _ref,
+var Application, options, routes, _ref,
   __hasProp = {}.hasOwnProperty,
   __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
 
@@ -107,21 +107,42 @@ module.exports = Application = (function(_super) {
 
   Application.prototype.title = 'Experiments';
 
-  Application.prototype.initDispatcher = function(options) {
-    options.controllerPath = 'scripts/controllers/';
-    options.controllerSuffix = '-controller';
-    return this.dispatcher = new Chaplin.Dispatcher(options);
-  };
-
-  Application.prototype.initRouter = function(routes, options) {
-    options.root = window.base_path + '/';
-    this.router = new Chaplin.Router(routes, options);
-    return routes(this.router.match);
-  };
+  Application.prototype.initialize = function(options) {};
 
   return Application;
 
 })(Chaplin.Application);
+
+if (!options) {
+  options = {};
+}
+
+if (this.started) {
+  throw new Error('Application#initialize: App was already started');
+}
+
+this.initRouter(options.routes, options);
+
+this.initDispatcher(options);
+
+this.initLayout(options);
+
+this.initComposer(options);
+
+this.initMediator();
+
+this.start(options)({
+  initDispatcher: function(options) {
+    options.controllerPath = 'scripts/controllers/';
+    options.controllerSuffix = '-controller';
+    return this.dispatcher = new Chaplin.Dispatcher(options);
+  },
+  initRouter: function(routes, options) {
+    options.root = window.base_path + '/';
+    this.router = new Chaplin.Router(routes, options);
+    return routes(this.router.match);
+  }
+});
 
 });
 
