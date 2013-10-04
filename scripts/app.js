@@ -326,7 +326,9 @@ module.exports = Experiments = (function(_super) {
 ;require.register("scripts/routes", function(exports, require, module) {
 module.exports = function(match) {
   match('', 'experiment#index');
-  return match('experiments/:id', 'experiment#show');
+  match('/', 'experiment#index');
+  match('experiments/:id', 'experiment#show');
+  return match('/experiments/:id', 'experiment#show');
 };
 
 });
