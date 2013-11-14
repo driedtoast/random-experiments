@@ -41,3 +41,8 @@ Looking to use:
 * [Processing](http://processingjs.org/)
 * [Raphael](http://raphaeljs.com/)
 * [d3](http://d3js.org/)
+
+TODO :
+* do a rewrite of - (http://thecolourclock.co.uk/)
+* add a parallax effect experiment
+* add random game models and such
