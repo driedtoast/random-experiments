@@ -1,0 +1,116 @@
+<!DOCTYPE html>  <html> <head>   <title>pos_experiment.coffee</title>   <meta http-equiv="content-type" content="text/html; charset=UTF-8">   <link rel="stylesheet" media="all" href="docco.css" /> </head> <body>   <div id="container">     <div id="background"></div>            <div id="jump_to">         Jump To &hellip;         <div id="jump_wrapper">           <div id="jump_page">                                           <a class="source" href="debt_experiment.html">                 debt_experiment.coffee               </a>                                           <a class="source" href="hello_experiment.html">                 hello_experiment.coffee               </a>                                           <a class="source" href="pos_experiment.html">                 pos_experiment.coffee               </a>                                           <a class="source" href="simple_box_experiment.html">                 simple_box_experiment.coffee               </a>                        </div>         </div>       </div>          <table cellpadding="0" cellspacing="0">       <thead>         <tr>           <th class="docs">             <h1>               pos_experiment.coffee             </h1>           </th>           <th class="code">           </th>         </tr>       </thead>       <tbody>                               <tr id="section-1">             <td class="docs">               <div class="pilwrap">                 <a class="pilcrow" href="#section-1">&#182;</a>               </div>               <p><strong>Parts of Speech parsing</strong> is an experiment involving parts of speech</p>             </td>             <td class="code">               <div class="highlight"><pre><span class="nx">define</span> <span class="p">[</span><span class="s">&quot;backbone&quot;</span><span class="p">,</span><span class="s">&quot;libs/pos.tagger&quot;</span><span class="p">],</span> <span class="nf">(Backbone, POSTaggerModule) -&gt;</span>
+  <span class="k">class</span> <span class="nx">Views</span><span class="p">.</span><span class="nx">PosExperimentView</span> <span class="k">extends</span> <span class="nx">Backbone</span><span class="p">.</span><span class="nx">View</span>
+
+    <span class="nv">events:</span>
+      <span class="s">&#39;click [data-action=&quot;analyze&quot;]&#39;</span>     <span class="o">:</span> <span class="s">&#39;analyze&#39;</span>
+
+    <span class="nv">questionReponses:</span>
+      <span class="nv">eat: </span><span class="p">[</span>
+        <span class="p">{</span>
+          <span class="nv">text: </span><span class="nf">(noun) -&gt;</span> <span class="s">&quot;Sometimes I eat </span><span class="si">#{</span><span class="nx">noun</span><span class="si">}</span><span class="s">&quot;</span><span class="p">,</span>
+          <span class="nv">emotion: </span><span class="mi">1</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+          <span class="nv">text: </span><span class="nf">(noun) -&gt;</span> <span class="s">&quot;Eating </span><span class="si">#{</span><span class="nx">noun</span><span class="si">}</span><span class="s"> is not very healthy&quot;</span><span class="p">,</span>
+          <span class="nv">emotion: </span><span class="mi">1</span>
+        <span class="p">}</span>
+      <span class="p">]</span>
+      <span class="nv">read: </span><span class="p">[</span>
+        <span class="p">{</span>
+        <span class="nv">text: </span><span class="nf">(noun) -&gt;</span> <span class="s">&quot;Well I&#39;m reading your question right now&quot;</span><span class="p">,</span>
+        <span class="nv">emotion: </span><span class="mi">1</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+        <span class="nv">text: </span><span class="nf">(noun) -&gt;</span> <span class="s">&quot;I read parts of speech mostly&quot;</span><span class="p">,</span>
+        <span class="nv">emotion: </span><span class="mi">1</span>
+        <span class="p">}</span>
+      <span class="p">]</span>
+
+    <span class="nv">taskReponses:</span>
+      <span class="nv">call: </span><span class="p">[</span>
+        <span class="p">{</span>
+          <span class="nv">text: </span><span class="nf">(noun) -&gt;</span> <span class="s">&quot;Why do you want to call </span><span class="si">#{</span><span class="nx">noun</span><span class="si">}</span><span class="s">?&quot;</span><span class="p">,</span>
+          <span class="nv">emotion: </span><span class="mi">1</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+          <span class="nv">text: </span><span class="nf">(noun) -&gt;</span> <span class="s">&quot;You still like </span><span class="si">#{</span><span class="nx">noun</span><span class="si">}</span><span class="s">?&quot;</span><span class="p">,</span>
+          <span class="nv">emotion: </span><span class="mi">1</span>
+        <span class="p">}</span>
+      <span class="p">]</span>
+      <span class="nv">make: </span><span class="p">[</span>
+        <span class="p">{</span>
+        <span class="nv">text: </span><span class="nf">(noun) -&gt;</span> <span class="s">&quot;Do you really think I can make </span><span class="si">#{</span><span class="nx">noun</span><span class="si">}</span><span class="s">?&quot;</span><span class="p">,</span>
+        <span class="nv">emotion: </span><span class="mi">1</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+        <span class="nv">text: </span><span class="nf">(noun) -&gt;</span> <span class="s">&quot;If I could make </span><span class="si">#{</span><span class="nx">noun</span><span class="si">}</span><span class="s"> I wouldn&#39;t be here&quot;</span><span class="p">,</span>
+        <span class="nv">emotion: </span><span class="mi">1</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+        <span class="nv">text: </span><span class="nf">(noun) -&gt;</span> <span class="s">&quot;I can only do so much. You could make your own </span><span class="si">#{</span><span class="nx">noun</span><span class="si">}</span><span class="s">&quot;</span><span class="p">,</span>
+        <span class="nv">emotion: </span><span class="mi">1</span>
+        <span class="p">}</span>
+      <span class="p">]</span></pre></div>             </td>           </tr>                               <tr id="section-2">             <td class="docs">               <div class="pilwrap">                 <a class="pilcrow" href="#section-2">&#182;</a>               </div>               <p>Tells backbone layout manager to manage the view</p>             </td>             <td class="code">               <div class="highlight"><pre>    <span class="nv">manage: </span><span class="kc">true</span></pre></div>             </td>           </tr>                               <tr id="section-3">             <td class="docs">               <div class="pilwrap">                 <a class="pilcrow" href="#section-3">&#182;</a>               </div>               <p>Used by layout manager to append a '.html' to find it
+via the relative path of app + below</p>             </td>             <td class="code">               <div class="highlight"><pre>    <span class="nv">template: </span><span class="s">&#39;templates/experiments/pos&#39;</span>
+
+
+    <span class="nv">initialize: </span><span class="nf">(opts) -&gt;</span>
+      <span class="vi">@collection = </span><span class="nx">opts</span><span class="p">.</span><span class="nx">collection</span>
+      <span class="k">super</span></pre></div>             </td>           </tr>                               <tr id="section-4">             <td class="docs">               <div class="pilwrap">                 <a class="pilcrow" href="#section-4">&#182;</a>               </div>               <p>Grabs the first verb</p>             </td>             <td class="code">               <div class="highlight"><pre>    <span class="nv">firstVerb: </span><span class="nf">(taggedWords) -&gt;</span>
+      <span class="k">for</span> <span class="nx">taggedWord</span> <span class="k">in</span> <span class="nx">taggedWords</span>
+        <span class="nv">word = </span><span class="nx">taggedWord</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="nv">tag = </span><span class="nx">taggedWord</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+        <span class="k">if</span> <span class="nx">_</span><span class="p">.</span><span class="nx">include</span><span class="p">([</span><span class="s">&#39;PP&#39;</span><span class="p">,</span><span class="s">&#39;VB&#39;</span><span class="p">,</span> <span class="s">&#39;VBN&#39;</span><span class="p">],</span> <span class="nx">tag</span><span class="p">)</span>
+          <span class="k">return</span> <span class="nx">word</span></pre></div>             </td>           </tr>                               <tr id="section-5">             <td class="docs">               <div class="pilwrap">                 <a class="pilcrow" href="#section-5">&#182;</a>               </div>               <p>Grabs the first set of nouns in sequence</p>             </td>             <td class="code">               <div class="highlight"><pre>    <span class="nv">firstNouns: </span><span class="nf">(taggedWords) -&gt;</span>
+      <span class="nv">nouns = </span><span class="s">&quot;&quot;</span>
+      <span class="k">for</span> <span class="nx">taggedWord</span> <span class="k">in</span> <span class="nx">taggedWords</span>
+        <span class="nv">word = </span><span class="nx">taggedWord</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="nv">tag = </span><span class="nx">taggedWord</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+        <span class="k">if</span> <span class="nx">_</span><span class="p">.</span><span class="nx">include</span><span class="p">([</span><span class="s">&#39;NN&#39;</span><span class="p">,</span><span class="s">&#39;NNS&#39;</span><span class="p">,</span> <span class="s">&#39;NNP&#39;</span><span class="p">],</span> <span class="nx">tag</span><span class="p">)</span>
+          <span class="nx">nouns</span> <span class="o">+=</span> <span class="s">&quot; </span><span class="si">#{</span><span class="nx">word</span><span class="si">}</span><span class="s">&quot;</span>
+        <span class="k">else</span> <span class="k">if</span> <span class="nx">nouns</span><span class="p">.</span><span class="nx">length</span> <span class="o">&gt;</span> <span class="mi">1</span>
+          <span class="k">return</span> <span class="nx">nouns</span>
+      <span class="nx">nouns</span></pre></div>             </td>           </tr>                               <tr id="section-6">             <td class="docs">               <div class="pilwrap">                 <a class="pilcrow" href="#section-6">&#182;</a>               </div>               <p>Gets a random value from a list</p>             </td>             <td class="code">               <div class="highlight"><pre>    <span class="nv">randomListItem: </span><span class="nf">(list) -&gt;</span>
+      <span class="nv">max = </span><span class="nx">list</span><span class="p">.</span><span class="nx">length</span>
+      <span class="nv">idx = </span><span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span> <span class="o">*</span> <span class="nx">max</span><span class="p">)</span>
+      <span class="nx">list</span><span class="p">[</span><span class="nx">idx</span><span class="p">]</span>
+
+    <span class="nv">questionResponse: </span><span class="nf">(taggedWords) -&gt;</span>
+      <span class="nv">verb = </span><span class="nx">@firstVerb</span><span class="p">(</span><span class="nx">taggedWords</span><span class="p">)</span>
+      <span class="nv">nouns = </span><span class="nx">@firstNouns</span><span class="p">(</span><span class="nx">taggedWords</span><span class="p">)</span>
+      <span class="k">if</span> <span class="nx">verb</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="nv">responses = </span><span class="nx">@questionReponses</span><span class="p">[</span><span class="nx">verb</span><span class="p">.</span><span class="nx">toLowerCase</span><span class="p">()])</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="nv">response = </span><span class="nx">@randomListItem</span><span class="p">(</span><span class="nx">responses</span><span class="p">))</span>
+        <span class="nx">response</span><span class="p">.</span><span class="nx">text</span><span class="p">(</span><span class="nx">nouns</span><span class="p">)</span>
+      <span class="k">else</span>
+        <span class="s">&quot;Looks like you might be asking a question about </span><span class="si">#{</span><span class="nx">nouns</span><span class="si">}</span><span class="s">?&quot;</span>
+
+    <span class="nv">taskResponse: </span><span class="nf">(taggedWords) -&gt;</span>
+      <span class="nv">verb = </span><span class="nx">@firstVerb</span><span class="p">(</span><span class="nx">taggedWords</span><span class="p">)</span>
+      <span class="nv">nouns = </span><span class="nx">@firstNouns</span><span class="p">(</span><span class="nx">taggedWords</span><span class="p">)</span>
+      <span class="k">if</span> <span class="nx">verb</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="nv">responses = </span><span class="nx">@taskReponses</span><span class="p">[</span><span class="nx">verb</span><span class="p">.</span><span class="nx">toLowerCase</span><span class="p">()])</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="nv">response = </span><span class="nx">@randomListItem</span><span class="p">(</span><span class="nx">responses</span><span class="p">))</span>
+          <span class="nx">response</span><span class="p">.</span><span class="nx">text</span><span class="p">(</span><span class="nx">nouns</span><span class="p">)</span>
+      <span class="k">else</span>
+        <span class="s">&quot;Do you need to do something related to </span><span class="si">#{</span><span class="nx">nouns</span><span class="si">}</span><span class="s">?&quot;</span></pre></div>             </td>           </tr>                               <tr id="section-7">             <td class="docs">               <div class="pilwrap">                 <a class="pilcrow" href="#section-7">&#182;</a>               </div>               <p>Main method to analyze text</p>             </td>             <td class="code">               <div class="highlight"><pre>    <span class="nv">analyze: </span><span class="nf">(e) -&gt;</span></pre></div>             </td>           </tr>                               <tr id="section-8">             <td class="docs">               <div class="pilwrap">                 <a class="pilcrow" href="#section-8">&#182;</a>               </div>               <p>Get the text from the description field</p>             </td>             <td class="code">               <div class="highlight"><pre>      <span class="nv">textValue = </span><span class="nx">@$</span><span class="p">(</span><span class="s">&#39;[name=&quot;description&quot;]&#39;</span><span class="p">).</span><span class="nx">val</span><span class="p">()</span></pre></div>             </td>           </tr>                               <tr id="section-9">             <td class="docs">               <div class="pilwrap">                 <a class="pilcrow" href="#section-9">&#182;</a>               </div>               <h1>. Update the result div with analysis</h1>             </td>             <td class="code">               <div class="highlight"><pre>      <span class="k">if</span> <span class="nx">textValue</span>
+        <span class="nv">words = </span><span class="k">new</span> <span class="nx">Lexer</span><span class="p">().</span><span class="nx">lex</span><span class="p">(</span><span class="nx">textValue</span><span class="p">)</span>
+        <span class="nv">taggedWords = </span><span class="k">new</span> <span class="nx">POSTagger</span><span class="p">().</span><span class="nx">tag</span><span class="p">(</span><span class="nx">words</span><span class="p">)</span>
+        <span class="nv">resultOutput = </span><span class="s">&quot;&quot;</span>
+
+        <span class="nv">firstWord = </span><span class="nx">taggedWords</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="nv">firstTag = </span><span class="nx">firstWord</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+        <span class="k">if</span> <span class="nx">_</span><span class="p">.</span><span class="nx">include</span><span class="p">([</span><span class="s">&#39;WRB&#39;</span><span class="p">,</span><span class="s">&#39;WP&#39;</span><span class="p">,</span><span class="s">&#39;WDT&#39;</span><span class="p">,</span> <span class="s">&#39;VBP&#39;</span><span class="p">],</span> <span class="nx">firstTag</span><span class="p">)</span>
+          <span class="nx">resultOutput</span> <span class="o">+=</span> <span class="s">&quot;&lt;div class=\&quot;type\&quot; &gt;</span><span class="si">#{</span><span class="nx">@questionResponse</span><span class="p">(</span><span class="nx">taggedWords</span><span class="p">)</span><span class="si">}</span><span class="s">&lt;br /&gt;&lt;/div&gt;&quot;</span>
+        <span class="k">else</span> <span class="k">if</span> <span class="nx">_</span><span class="p">.</span><span class="nx">include</span><span class="p">([</span><span class="s">&#39;PP&#39;</span><span class="p">,</span><span class="s">&#39;VB&#39;</span><span class="p">,</span> <span class="s">&#39;VBN&#39;</span><span class="p">],</span> <span class="nx">firstTag</span><span class="p">)</span>
+          <span class="nx">resultOutput</span> <span class="o">+=</span> <span class="s">&quot;&lt;div class=\&quot;type\&quot; &gt;</span><span class="si">#{</span><span class="nx">@taskResponse</span><span class="p">(</span><span class="nx">taggedWords</span><span class="p">)</span><span class="si">}</span><span class="s">&lt;br /&gt;&lt;/div&gt;&quot;</span>
+        <span class="k">else</span> <span class="k">if</span> <span class="s">&#39;PRP&#39;</span> <span class="o">==</span> <span class="nx">firstTag</span>  <span class="c1"># Also need PDT for all, both, etc... / analyze all</span>
+          <span class="nx">resultOutput</span> <span class="o">+=</span> <span class="s">&quot;&lt;div class=\&quot;type\&quot; &gt;Need to communicate someone for this? &lt;br /&gt;&lt;/div&gt;&quot;</span></pre></div>             </td>           </tr>                               <tr id="section-10">             <td class="docs">               <div class="pilwrap">                 <a class="pilcrow" href="#section-10">&#182;</a>               </div>               <p>TODO analyze the contents based on combination of tags to determine actions
+TODO analyze verb and determine the subject after that
+Also determine content based on verb / preposition and Proper Noun</p>             </td>             <td class="code">               <div class="highlight"><pre>        <span class="k">for</span> <span class="nx">taggedWord</span> <span class="k">in</span> <span class="nx">taggedWords</span>
+          <span class="nv">word = </span><span class="nx">taggedWord</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+          <span class="nv">tag = </span><span class="nx">taggedWord</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+          <span class="nx">resultOutput</span> <span class="o">+=</span> <span class="s">&quot;&lt;div class=\&quot;pos-item\&quot; &gt;Word: </span><span class="si">#{</span><span class="nx">word</span><span class="si">}</span><span class="s">, TAG: </span><span class="si">#{</span><span class="nx">tag</span><span class="si">}</span><span class="s">&lt;/div&gt;&quot;</span>
+        <span class="nx">@$</span><span class="p">(</span><span class="s">&#39;[data-elem=&quot;results&quot;]&#39;</span><span class="p">).</span><span class="nx">html</span><span class="p">(</span><span class="nx">resultOutput</span><span class="p">)</span></pre></div>             </td>           </tr>                               <tr id="section-11">             <td class="docs">               <div class="pilwrap">                 <a class="pilcrow" href="#section-11">&#182;</a>               </div>               <p>TODO move into common ExperimentView</p>             </td>             <td class="code">               <div class="highlight"><pre>    <span class="nv">html: </span><span class="nf">(root, el) -&gt;</span>
+      <span class="nx">$</span><span class="p">(</span><span class="s">&#39;#experiment&#39;</span><span class="p">).</span><span class="nx">empty</span><span class="p">()</span>
+      <span class="nx">$</span><span class="p">(</span><span class="nx">root</span><span class="p">).</span><span class="nx">html</span><span class="p">(</span><span class="nx">el</span><span class="p">)</span></pre></div>             </td>           </tr>                               <tr id="section-12">             <td class="docs">               <div class="pilwrap">                 <a class="pilcrow" href="#section-12">&#182;</a>               </div>               <p>TODO move into common ExperimentView</p>             </td>             <td class="code">               <div class="highlight"><pre>    <span class="nv">close: </span><span class="nf">(e) -&gt;</span>
+      <span class="nx">@remove</span><span class="p">()</span>
+      <span class="nx">Backbone</span><span class="p">.</span><span class="nx">history</span><span class="p">.</span><span class="nx">navigate</span><span class="p">(</span><span class="s">&#39;/&#39;</span><span class="p">,</span><span class="kc">true</span><span class="p">)</span>
+
+</pre></div>             </td>           </tr>                </tbody>     </table>   </div> </body> </html> 
