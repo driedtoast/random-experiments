@@ -10,13 +10,14 @@ Take a look [here](http://driedtoast.github.com/random-experiments).
 
 Setup includes:
 * Install [node](http://nodejs.org/) / npm
-* Install brunch (http://brunch.io/) `npm install -g brunch`
+* Install nave: `npm install -g nave`
+* `nave auto`
 * Install dependencies `npm install`
-* Install javascript dependencies `bower install`
+* Install javascript dependencies `bower install` or `./node_modules/.bin/bower install`
 
 Inside the random experiments directory run:
-* `brunch build`
-* `brunch watch --server`
+* `npm run build`
+* `npm start`
 
 
 Using the following:
@@ -33,6 +34,10 @@ Using the following:
 * [sketch](http://soulwire.github.io/sketch.js/)
 * [POSTagger](//github.com/fortnightlabs/pos-js)
 
+## TODO :
+* add a parallax effect experiment
+* add random game models and such
+
 Looking to use:
 * [Traer](http://code.google.com/p/traer-js/) for physics eventually
 * [Box2D](//github.com/kripken/box2d.js/)
@@ -42,7 +47,6 @@ Looking to use:
 * [Raphael](http://raphaeljs.com/)
 * [d3](http://d3js.org/)
 
-TODO :
-* do a rewrite of - (http://thecolourclock.co.uk/)
-* add a parallax effect experiment
-* add random game models and such
+
+## Inspirational
+* (http://thecolourclock.co.uk/)

@@ -1,0 +1,34 @@
+[
+    {
+        "id": 1, "type": "experiment",
+        "name": "Hello World",
+        "description": "Simple example on using modules for sub view requires",
+        "lock_version": 1,
+        "source": "hello_experiment"
+    },
+    {
+        "id": 2, "type": "experiment",
+        "name": "Debt is evil",
+        "description": "Simple debt calculator",
+        "lock_version": 1,
+        "source": "debt_experiment"
+    },
+    {   "id": 3, "type": "experiment",
+        "name": "the box drags on",
+        "description": "Drag and create boxes using threejs / physijs",
+        "lock_version": 1,
+        "source": "simple_box_experiment"
+    },
+    {   "id": 4, "type": "experiment",
+        "name": "parts of speech",
+        "description": "Analysis of parts of speech using js-pos",
+        "lock_version": 1,
+        "source": "pos_experiment"
+    },
+    {   "id": 5, "type": "experiment",
+        "name": "gravatar",
+        "description": "Auto display of gravatar based on email address change",
+        "lock_version": 1,
+        "source": "gravatar_experiment"
+    }
+]

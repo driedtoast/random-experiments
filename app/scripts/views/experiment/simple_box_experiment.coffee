@@ -14,7 +14,8 @@ module.exports = class SimpleBoxExperimentView extends View
   template = null
 
   initialize: ->
-    super
+    super()
+
     thirdPartyRoot = window.base_path || ''
     Physijs.scripts.worker = "#{thirdPartyRoot}/third-party/physijs_worker.js"
     Physijs.scripts.ammo = "#{thirdPartyRoot}/third-party/ammo.js"

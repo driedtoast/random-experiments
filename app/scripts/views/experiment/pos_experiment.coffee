@@ -1,6 +1,9 @@
 View = require 'scripts/views/base/view'
 template = require 'templates/experiments/pos'
-
+Backbone = require('backbone')
+$ = require('jquery')
+_ = require('underscore')
+Backbone.$ = $
 # **Parts of Speech parsing** is an experiment involving parts of speech
 module.exports = class PosExperimentView extends View
 

@@ -1,4 +1,6 @@
 require 'scripts/libs/view-helper'  
+Chaplin = require 'chaplin'
+Backbone = require 'backbone'
 
 module.exports = class View extends Chaplin.View
   getTemplateFunction: ->
@@ -31,7 +33,8 @@ module.exports = class View extends Chaplin.View
 
 
   render: ->
-    returnValue = super
+    returnValue = super.render()
+
     @afterRender?()
     returnValue
 

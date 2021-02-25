@@ -2,31 +2,39 @@
   "author": "Daniel Marchant",
   "name": "random-experiments",
   "description": "Random Experiments and fun",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "homepage": "",
   "repository": {
     "type": "git",
     "url": ""
   },
   "engines": {
-    "node": "~0.6.10 || 0.8 || 0.9"
+    "node": "^v15.10.0"
   },
   "scripts": {
-    "start": "brunch watch --server"
+    "start": "brunch watch --server",
+    "build": "brunch build",
+    "release": "brunch build --production"
   },
   "dependencies": {
-    "bower": ">= 1.2.7",
-    "javascript-brunch": ">= 1.0 < 1.5",
-    "coffee-script-brunch": ">= 1.0 < 1.5",
-    "handlebars-brunch": "git+https://github.com/brunch/handlebars-brunch.git",
-    "css-brunch": ">= 1.0 < 1.5",
-    "coffee-script": ">= 1.6.3",
-    "sass-brunch": "1.5.0",
-    "uglify-js-brunch": ">= 1.0 < 1.5",
-    "clean-css-brunch": ">= 1.0 < 1.5"
+    "chaplin": "~1.1.0",
+    "console-polyfill": "~0.1.0",
+    "exoskeleton": "~0.6.0",
+    "handlebars": "^4.7.7",
+    "jquery": "^3.5.1",
+    "normalize.css": "~3.0.3",
+    "underscore": "^1.12.0"
   },
   "devDependencies": {
-    "mocha": "0.14.0",
-    "express": "2.5.8"
+    "bower": ">= 1.8.12",
+    "brunch": "^4.0.0",
+    "clean-css-brunch": "^3.0.0",
+    "coffee-script-brunch": ">= 4.0.0",
+    "coffeescript": "^2.5.1",
+    "express": "^4.17.1",
+    "handlebars-brunch": "git+https://github.com/brunch/handlebars-brunch.git",
+    "mocha": "^8.3.0",
+    "sass-brunch": "^3.0.0",
+    "uglify-js-brunch": "^2.10.0"
   }
 }

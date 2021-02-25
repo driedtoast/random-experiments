@@ -35,6 +35,7 @@ module.exports = class HelloExperimentView extends View
     @ctx.start()
 
   remove: ->
-    super
+    super()
+
     @ctx.stop()
     @ctx.clear()

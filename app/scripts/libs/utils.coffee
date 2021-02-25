@@ -1,4 +1,6 @@
 
+Chaplin = require 'chaplin'
+
 utils = Chaplin.utils.beget Chaplin.utils
 
 Object.seal? utils

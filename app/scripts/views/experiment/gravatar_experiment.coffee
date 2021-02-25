@@ -1,5 +1,8 @@
 View = require 'scripts/views/base/view'
 template = require 'templates/experiments/gravatar'
+Backbone = require('backbone')
+$ = require('jquery')
+Backbone.$ = $
 
 # **GravatarExperiment** is a simple experiment to display the gravatar based on an email
 # to test out a way to make a profile registration

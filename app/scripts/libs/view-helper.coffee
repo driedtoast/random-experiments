@@ -1,4 +1,5 @@
 utils = require 'scripts/libs/utils'
+Chaplin = require 'chaplin'
 
 
 # Application-specific Handlebars helpers
