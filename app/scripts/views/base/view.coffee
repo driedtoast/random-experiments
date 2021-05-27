@@ -3,6 +3,7 @@ Chaplin = require 'chaplin'
 Backbone = require 'backbone'
 
 module.exports = class View extends Chaplin.View
+
   getTemplateFunction: ->
     # Template compilation
     # --------------------
